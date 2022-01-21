@@ -1,0 +1,20 @@
+.Dashboard_dropdown_div {
+  width: 100%;
+  padding: 0.5rem 0.3rem;
+}
+.Dashboard_dropdown_div label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sideBarColor);
+  margin-bottom: 0.5rem;
+}
+
+.Dashboard_dropdown_div select {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--lightSmoothgray);
+  padding: 0.6rem;
+}

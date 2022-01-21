@@ -1,0 +1,45 @@
+.Search_bar_div {
+  width: 300px;
+  height: 40px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px #e6e6e6;
+  background-color: var(--mainColor);
+}
+
+.Search_bar_div input {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 1rem;
+  border: none;
+  outline: none;
+}
+
+.Search_bar_div .searchIconsDiv {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchIconsDiv i {
+  color: var(--price);
+  font-size: 0.8rem;
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+.box_div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--darkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--mainColor);
+}

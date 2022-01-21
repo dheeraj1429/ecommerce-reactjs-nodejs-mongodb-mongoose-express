@@ -1,0 +1,17 @@
+.Products_div {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bgCl);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.filter_div {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--mainColor);
+  box-shadow: 0 0 50px #ececec;
+}
+.rangeInput {
+  width: 100%;
+  height: 30px;
+}

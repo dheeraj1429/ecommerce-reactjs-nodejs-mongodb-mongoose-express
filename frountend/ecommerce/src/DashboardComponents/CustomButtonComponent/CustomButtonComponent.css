@@ -1,0 +1,25 @@
+.Custom_button {
+  padding: 0.4rem 1.7rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.Save_change {
+  background-color: var(--darkBlue);
+  color: var(--mainColor);
+  font-size: 0.9rem;
+}
+.Clear {
+  border: 1px solid var(--smGry);
+  font-size: 0.9rem;
+}
+.eidt_products {
+  background-color: var(--dark);
+  color: var(--mainColor);
+  padding: 0.5rem 2.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px #c3c3c3;
+}
+.eidt_products i {
+  font-size: 0.8rem;
+}

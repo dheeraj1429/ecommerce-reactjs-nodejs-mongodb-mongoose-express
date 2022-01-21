@@ -1,0 +1,25 @@
+.Products_upload_div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgCl);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.dashBoard_card_div {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--mainColor);
+  box-shadow: 0 0 50px #e1e1e1;
+}
+
+.image_upload_div {
+  width: 100%;
+  height: 300px;
+  border: 2px dotted var(--lightSmoothgray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

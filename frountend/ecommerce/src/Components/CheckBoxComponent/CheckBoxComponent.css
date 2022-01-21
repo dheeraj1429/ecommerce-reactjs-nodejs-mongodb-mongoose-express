@@ -1,0 +1,5 @@
+.checkbox_div p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sideBarColor);
+}

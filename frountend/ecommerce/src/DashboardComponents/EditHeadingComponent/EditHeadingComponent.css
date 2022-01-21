@@ -1,0 +1,11 @@
+.editHeading_div h1 {
+  font-size: 1.2rem;
+  color: var(--sideBarColor);
+}
+.editHeading_div p {
+  color: var(--lightSmook);
+}
+
+.style2 {
+  font-size: 1rem !important;
+}

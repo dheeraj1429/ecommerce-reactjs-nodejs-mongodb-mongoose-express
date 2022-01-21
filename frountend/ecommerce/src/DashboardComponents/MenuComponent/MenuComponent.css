@@ -1,0 +1,60 @@
+.Dashboard_heading_div i,
+.Dashboard_heading_div h3 {
+  transition: all 0.2s ease;
+}
+.dropdown_div {
+  cursor: pointer;
+}
+.dropdown_div_active i,
+.dropdown_div_active h2 {
+  color: var(--mainColor);
+}
+.Dashboard_heading_div:hover i {
+  color: var(--mainColor);
+}
+.Dashboard_heading_div:hover h3 {
+  color: var(--mainColor);
+}
+.Dashboard_menu_div i {
+  color: var(--lightSmook);
+  margin-right: 1rem;
+}
+.Dashboard_menu_div h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: var(--lightSmook);
+}
+.active_menu i {
+  color: var(--mainColor);
+}
+.active_menu h3 {
+  color: var(--mainColor);
+}
+.Dashboard_menu_div ul li {
+  list-style: none;
+  color: var(--lightSmook);
+}
+.Dashboard_menu_div ul {
+  margin-top: 1rem;
+}
+.Dashboard_menu_div ul li p {
+  margin-bottom: 0;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  margin-left: 0.8rem;
+}
+.Dashboard_menu_div ul li p:hover {
+  color: var(--mainColor);
+  cursor: pointer;
+}
+.dashboard_list {
+  display: none;
+}
+.dashboard_list_active {
+  display: block;
+}
+.listActive {
+  color: var(--mainColor);
+}

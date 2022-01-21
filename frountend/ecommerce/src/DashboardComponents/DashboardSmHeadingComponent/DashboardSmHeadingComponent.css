@@ -1,0 +1,12 @@
+.uploadProduct_info_div h3 {
+  font-size: 1rem;
+  color: var(--sideBarColor);
+  margin-bottom: 4px;
+}
+.uploadProduct_info_div p {
+  font-size: 0.9rem;
+  color: var(--lightSmook);
+}
+.Large {
+  font-size: 1.5rem !important;
+}

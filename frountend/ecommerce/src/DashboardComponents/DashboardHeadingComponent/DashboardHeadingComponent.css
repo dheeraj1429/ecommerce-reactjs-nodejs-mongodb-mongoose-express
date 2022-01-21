@@ -1,0 +1,5 @@
+.dashboardHeading_div p {
+  color: var(--smGry);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

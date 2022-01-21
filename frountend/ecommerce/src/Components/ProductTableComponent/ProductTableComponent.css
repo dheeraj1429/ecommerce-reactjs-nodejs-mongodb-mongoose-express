@@ -1,0 +1,14 @@
+.table {
+  border: 1px solid var(--light) !important;
+}
+.table tr th {
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--price);
+}
+.table tr td {
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  width: 70%;
+  color: var(--desCl);
+}

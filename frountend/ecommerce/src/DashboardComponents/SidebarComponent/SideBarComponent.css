@@ -1,0 +1,18 @@
+.Sidebar_Div {
+  width: 320px;
+  background-color: var(--sideBarColor);
+  padding: 2rem;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.Sidebar_Div::-webkit-scrollbar {
+  width: 4px;
+}
+
+.Sidebar_Div::-webkit-scrollbar-thumb {
+  background: var(--lightSmook);
+  border-radius: 10px;
+}

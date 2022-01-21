@@ -1,0 +1,56 @@
+.outer {
+  position: relative;
+  background: #fff;
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.outer img {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0px;
+  z-index: 0;
+  animation-delay: 0.5s;
+}
+
+.outer .Product_imge {
+  width: auto;
+  height: 300px;
+}
+
+.outer .content {
+  animation-delay: 0.3s;
+  position: absolute;
+  left: 20px;
+  z-index: 3;
+}
+
+.outer h1 {
+  color: #111;
+}
+
+.outer p {
+  width: 280px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #aaa;
+  margin: 20px 0;
+}
+
+.outer .bg {
+  display: inline-block;
+  color: #fff;
+  background: cornflowerblue;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.7em;
+}
+
+.output .cart-icon {
+  padding-right: 8px;
+}
