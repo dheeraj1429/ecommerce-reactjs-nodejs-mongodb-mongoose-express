@@ -1,0 +1,33 @@
+.navbar_icons_div i {
+  color: var(--mainColor);
+  font-size: 20px;
+}
+
+.navbar_icons_div p {
+  margin-bottom: 0;
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+.navbar_icons_div h3 {
+  font-size: 1rem;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+
+.buy_icon {
+  position: relative;
+}
+
+.itme {
+  width: 18px;
+  height: 18px;
+  background-color: var(--headCl);
+  border-radius: 50%;
+  position: absolute;
+  left: 8px;
+  top: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

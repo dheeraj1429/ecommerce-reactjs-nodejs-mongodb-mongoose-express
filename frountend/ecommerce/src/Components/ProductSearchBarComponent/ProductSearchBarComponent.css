@@ -1,0 +1,61 @@
+.SearchBar_div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.SearchBar_div input {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+
+.SearchBar_div input::placeholder {
+  color: var(--lightSmook);
+}
+
+.SearchBar_div .AllCategory_div {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainColor);
+  cursor: pointer;
+}
+
+.AllCategory_div p {
+  font-size: 0.9rem;
+}
+
+.AllCategory_div i {
+  font-size: 0.6rem;
+}
+
+.SearchBar_div .AllCategory_div p {
+  margin-bottom: 0;
+}
+
+.SearchBar_div .Search_bar_icon_div {
+  width: 90px;
+  height: 100%;
+  background-color: var(--btnCL);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  cursor: pointer;
+  color: var(--mainColor);
+  border-radius: 6px;
+}
+
+.Search_bar_icon_div i {
+  font-size: 20px;
+}

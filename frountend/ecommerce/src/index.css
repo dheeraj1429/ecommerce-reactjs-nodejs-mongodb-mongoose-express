@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* colors */
@@ -34,11 +34,24 @@ body {
   --desCl: #686868;
   --boxCl: #dddddd;
   --light: #eeeeee;
+
+  --skyBlue: #263c97;
+  --bodyColor: #f3f5f6;
+  --offCl: #5aab19;
+  --newCl: #cc1414;
+  --btnCL: #16bcdc;
+  --headCl: #1474cd;
+  -darkfotcl: #1474cd;
+  --smoothgryCl: #999999;
 }
 /* colors */
 
 a {
   text-decoration: none !important;
+}
+
+.side_padding {
+  padding: 0 100px;
 }
 
 ::-webkit-scrollbar {
@@ -48,4 +61,16 @@ a {
 ::-webkit-scrollbar-thumb {
   background: var(--lightSmook);
   border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .side_padding {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .side_padding {
+    padding: 0 10px;
+  }
 }

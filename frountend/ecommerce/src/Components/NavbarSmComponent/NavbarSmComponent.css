@@ -1,0 +1,26 @@
+.nav_sm_div h4 {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav_sm_inner_div {
+  height: 55px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav_sm_inner_div:hover {
+  background-color: var(--btnCL);
+}
+
+.navb_tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.navb_tabs h4:hover {
+  color: var(--btnCL) !important;
+}

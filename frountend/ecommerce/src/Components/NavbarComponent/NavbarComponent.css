@@ -1,0 +1,8 @@
+.Navbar_div {
+  background-color: var(--skyBlue);
+}
+
+.Navbar_div .logo {
+  font-size: 2.3rem;
+  font-weight: 400;
+}
