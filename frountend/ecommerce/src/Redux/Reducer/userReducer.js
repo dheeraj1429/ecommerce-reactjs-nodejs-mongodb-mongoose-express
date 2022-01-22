@@ -4,6 +4,7 @@ const initalState = {
   ProductRefStatus: null,
   allProducts: null,
   ProductSelected: null,
+  SingleProductSelected: null,
 };
 
 const userReducer = (state = initalState, action) => {
@@ -30,6 +31,12 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         ProductSelected: action.payload,
+      };
+
+    case ACTION_TYPE.SINGLE_PRODUCT_SELECT:
+      return {
+        ...state,
+        SingleProductSelected: action.payload,
       };
 
     default:

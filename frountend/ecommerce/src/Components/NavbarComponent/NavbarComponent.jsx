@@ -4,6 +4,7 @@ import NavbarIconsComponent from '../NavbarIconsComponent/NavbarIconsComponent';
 import NavbarSmComponent from '../NavbarSmComponent/NavbarSmComponent';
 
 import './NavbarComponent.css';
+import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
   return (
@@ -11,7 +12,9 @@ function NavbarComponent() {
       <div className="container-fluid pt-5">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-2">
-            <h1 className="text-white logo">dukamarket..</h1>
+            <Link to="/">
+              <h1 className="text-white logo">dukamarket..</h1>
+            </Link>
           </div>
           <div className="col-12 col-sm-12 col-md-6">
             <ProductSearchBarComponent />

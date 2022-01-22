@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { fetchAllProducts } from '../../Redux/Action/action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavbarComponent from '../../Components/NavbarComponent/NavbarComponent';
 import HomePageBannerComponent from '../../Components/HomePageBannerComponent/HomePageBannerComponent';
 import ProductHeadingComponent from '../../Components/ProductHeadingComponent/ProductHeadingComponent';
@@ -9,6 +9,7 @@ import ProductCardComponent from '../../Components/ProductCardComponent/ProductC
 import './HomePage.css';
 
 function HomePage() {
+  const selector = useSelector((state) => state.userStoreData.allProducts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -22,9 +23,9 @@ function HomePage() {
 
       <div className="side_padding">
         <div className="pt-2 pb-5 px-3 d-flex align-items-center">
-          <ProductCardComponent />
-          <ProductCardComponent />
-          <ProductCardComponent />
+          {selector !== null && selector.success === true
+            ? selector.AllProducts.slice(0, 7).map((el) => <ProductCardComponent key={el._id} data={el} />)
+            : null}
         </div>
       </div>
     </div>

@@ -65,3 +65,11 @@ export const selectedProduct = function (data) {
     payload: data,
   };
 };
+
+// single product selected
+export const singleProductSelected = function (data) {
+  return {
+    type: ACTION_TYPE.SINGLE_PRODUCT_SELECT,
+    payload: data,
+  };
+};

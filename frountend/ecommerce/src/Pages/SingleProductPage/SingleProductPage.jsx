@@ -1,0 +1,27 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import NavbarComponent from '../../Components/NavbarComponent/NavbarComponent';
+import EditHeadingComponent from '../../DashboardComponents/EditHeadingComponent/EditHeadingComponent';
+import SingleProductCardComponent from '../../Components/SingleProductCardComponent/SingleProductCardComponent';
+
+import './SingleProductPage.css';
+
+function SingleProductPage() {
+  const selector = useSelector((state) => state.userStoreData.SingleProductSelected);
+  return (
+    <div className="Single_product_page">
+      <NavbarComponent />
+
+      <div className="side_padding py-3">
+        <div className="container-fluid ">
+          <div className="row mb-4">
+            <EditHeadingComponent heading={'Home / Somic G951 pink Gaming Headset'} style={'single_page_heading'} />
+          </div>
+          {selector !== null && Object.keys(selector).includes('name') ? <SingleProductCardComponent data={selector} /> : null}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default SingleProductPage;

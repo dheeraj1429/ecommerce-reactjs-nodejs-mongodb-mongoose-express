@@ -9,3 +9,8 @@
 .style2 {
   font-size: 1rem !important;
 }
+
+.single_page_heading {
+  font-size: 0.9rem !important;
+  color: var(--desCl) !important;
+}
