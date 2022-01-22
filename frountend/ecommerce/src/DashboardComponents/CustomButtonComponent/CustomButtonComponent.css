@@ -23,3 +23,28 @@
 .eidt_products i {
   font-size: 0.8rem;
 }
+.discover_btn {
+  border: 1px solid var(--sideBarColor);
+  background-color: transparent;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.discover_btn:hover {
+  background-color: var(--dark);
+  color: var(--mainColor);
+}
+.addToCartBtn {
+  background-color: var(--btnCL);
+  color: var(--mainColor);
+  border-radius: 30px;
+  padding: 0.5rem 2.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.addToCartBtn:hover {
+  background-color: var(--dark);
+}

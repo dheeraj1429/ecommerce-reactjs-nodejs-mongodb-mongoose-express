@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductSearchBarComponent from '../ProductSearchBarComponent/ProductSearchBarComponent';
 import NavbarIconsComponent from '../NavbarIconsComponent/NavbarIconsComponent';
 import NavbarSmComponent from '../NavbarSmComponent/NavbarSmComponent';

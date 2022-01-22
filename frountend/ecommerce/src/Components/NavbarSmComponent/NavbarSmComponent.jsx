@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './NavbarSmComponent.css';
 
@@ -13,7 +14,11 @@ function NavbarSmComponent() {
       <div className="col-12 col-sm-12 col-md-10 d-flex align-items-center">
         {NavbarContent.map((el) => (
           <div className="px-3 navb_tabs" key={el.el}>
-            <h4 className="mb-0 text-white">{el.el}</h4>
+            {
+              <Link to={el.el === 'HOME' ? '/' : el.el.toLowerCase()}>
+                <h4 className="mb-0 text-white">{el.el}</h4>
+              </Link>
+            }
           </div>
         ))}
       </div>

@@ -1,0 +1,20 @@
+.Home_page_banner_div {
+  width: 100%;
+  padding: 150px 0;
+  background-image: url(https://opencart.dostguru.com/MS13/readymart_03/image/cache/catalog/slider/S2-1230x555.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Home_page_banner_div h1 {
+  color: var(--sideBarColor);
+  font-size: 55px;
+}
+
+.Home_page_banner_div p {
+  margin-top: 1rem;
+  color: var(--price);
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+}

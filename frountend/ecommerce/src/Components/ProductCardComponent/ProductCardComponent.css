@@ -1,0 +1,43 @@
+.Product_card_div {
+  width: 250px;
+  border-radius: 10px;
+  background-color: var(--mainColor);
+  box-shadow: 0 0 15px var(--boxCl);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1.5rem;
+}
+.Product_card_div img {
+  width: 200px;
+  height: auto;
+}
+.Product_card_content h3 {
+  font-size: 1rem;
+  color: var(--headCl);
+  font-weight: 600;
+}
+.Product_card_content i {
+  font-size: 0.7rem;
+  color: var(--darkYellow);
+}
+
+.Product_card_content p {
+  font-size: 0.8rem;
+  color: var(--smGry);
+}
+
+.Product_card_content h4 {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.price i {
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+.button_div {
+  transition: all 0.3s ease;
+}
