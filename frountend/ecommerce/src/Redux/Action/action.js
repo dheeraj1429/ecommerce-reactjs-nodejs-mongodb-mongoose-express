@@ -73,3 +73,68 @@ export const singleProductSelected = function (data) {
     payload: data,
   };
 };
+
+// Add To Card
+export const addtoCard = function (data) {
+  return {
+    type: ACTION_TYPE.ADD_TO_CART,
+    payload: data,
+  };
+};
+
+// search product from the databse
+export const searchProducts = function (data) {
+  return async function (dispatch) {
+    try {
+      const ref = await fetch('', {
+        headers: {
+          'content-type': 'application/json',
+        },
+
+        method: 'POST',
+
+        body: JSON.stringify({
+          data,
+        }),
+      });
+
+      const data = await ref.json();
+
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+
+// Show Add To Cart Popup
+export const showAddToCartPopup = function (data) {
+  return {
+    type: ACTION_TYPE.SHOW_ADD_TO_CART_POPUP,
+    payload: data,
+  };
+};
+
+// add to cart selected product
+export const addToSelected = function (data) {
+  return {
+    type: ACTION_TYPE.ADD_TO_SELECTED,
+    payload: data,
+  };
+};
+
+// add to wishlist products
+export const addWishList = function (data) {
+  return {
+    type: ACTION_TYPE.ADD_TO_WISHLIST,
+    payload: data,
+  };
+};
+
+// Close sidebar component
+export const closeSiderBar = function (data) {
+  return {
+    type: ACTION_TYPE.CLOSE_SIDE_BAR,
+    payload: data,
+  };
+};

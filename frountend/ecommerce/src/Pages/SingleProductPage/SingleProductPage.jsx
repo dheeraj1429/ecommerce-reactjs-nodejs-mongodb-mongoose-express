@@ -15,7 +15,7 @@ function SingleProductPage() {
       <div className="side_padding py-3">
         <div className="container-fluid ">
           <div className="row mb-4">
-            <EditHeadingComponent heading={'Home / Somic G951 pink Gaming Headset'} style={'single_page_heading'} />
+            <EditHeadingComponent heading={`Home / ${selector.category}`} style={'single_page_heading'} />
           </div>
           {selector !== null && Object.keys(selector).includes('name') ? <SingleProductCardComponent data={selector} /> : null}
         </div>

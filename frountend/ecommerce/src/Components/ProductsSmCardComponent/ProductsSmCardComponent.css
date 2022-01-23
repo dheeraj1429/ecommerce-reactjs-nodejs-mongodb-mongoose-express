@@ -1,0 +1,31 @@
+.car_sm_products {
+  border-bottom: 1px solid var(--light);
+  padding: 0.6rem 1.5rem;
+  display: flex;
+}
+
+.car_sm_products img {
+  width: auto;
+  height: 100px;
+  margin-right: 0.7rem;
+}
+
+.car_sm_products > div {
+  width: 80%;
+}
+
+.car_sm_products h1 {
+  font-size: 0.8rem;
+  color: var(--skyBlue);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.car_sm_products p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.car_sm_products p i {
+  font-size: 0.7rem;
+}

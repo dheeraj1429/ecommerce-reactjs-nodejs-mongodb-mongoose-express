@@ -45,6 +45,7 @@
 .product_other_data p {
   text-align: justify;
   font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .icons_div_single i {
@@ -66,5 +67,42 @@
 }
 
 .icons_div_single {
+  cursor: pointer;
+}
+
+.product_other_data span {
+  font-weight: 500;
+  margin-left: 1rem;
+  color: var(--btnCL);
+}
+
+.incInput {
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--light);
+  align-items: center;
+}
+
+.incInput > div {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.incInput > div p {
+  font-size: 1.2rem;
+}
+
+.minus {
+  border-right: 1px solid var(--light);
+  cursor: pointer;
+}
+
+.plus {
+  border-left: 1px solid var(--light);
   cursor: pointer;
 }

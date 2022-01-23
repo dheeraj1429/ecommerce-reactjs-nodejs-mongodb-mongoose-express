@@ -1,17 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './NavbarIconsComponent.css';
 
-function NavbarIconsComponent({ icon, title, subTitle, shop, link }) {
+function NavbarIconsComponent({ icon, title, subTitle, shop, link, onClick }) {
+  const selector = useSelector((state) => state.userStoreData.AddToCart);
   return (
     <div className="navbar_icons_div d-flex align-items-center">
       {shop ? (
         <div className="buy_icon">
           <div className="itme">
-            <p>1</p>
+            <p>{selector.length}</p>
           </div>
-          <i class={icon}></i>
+          {icon === 'fas fa-shopping-bag' ? <i class={icon} onClick={onClick ? onClick : null}></i> : <i class={icon}></i>}
         </div>
       ) : (
         <i class={icon}></i>

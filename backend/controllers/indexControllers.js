@@ -44,7 +44,16 @@ const fetchAllProducts = async (req, res) => {
   }
 };
 
+// search product from the database
+const serchProduct = async (req, res) => {
+  try {
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   createProducts,
   fetchAllProducts,
+  serchProduct,
 };

@@ -5,6 +5,22 @@ const initalState = {
   allProducts: null,
   ProductSelected: null,
   SingleProductSelected: null,
+  AddToCart: [],
+  showAddToCardPopUp: false,
+  AddToSelectedProduct: null,
+  WishListProducts: [],
+  CloseSidebar: false,
+};
+
+// Group Add To card product
+const groupProducts = function (card, addTocardItems) {
+  const present = card.find((el) => el._id === addTocardItems._id);
+
+  if (present) {
+    return card.map((el) => (el._id === addTocardItems._id ? { ...el, quntity: el.quntity + 1, totalPrice: el.totalPrice + el.price } : el));
+  }
+
+  return [...card, { ...addTocardItems, quntity: 1, totalPrice: addTocardItems.price }];
 };
 
 const userReducer = (state = initalState, action) => {
@@ -37,6 +53,36 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         SingleProductSelected: action.payload,
+      };
+
+    case ACTION_TYPE.ADD_TO_CART:
+      return {
+        ...state,
+        AddToCart: groupProducts(state.AddToCart, action.payload),
+      };
+
+    case ACTION_TYPE.ADD_TO_WISHLIST:
+      return {
+        ...state,
+        WishListProducts: groupProducts(state.WishListProducts, action.payload),
+      };
+
+    case ACTION_TYPE.SHOW_ADD_TO_CART_POPUP:
+      return {
+        ...state,
+        showAddToCardPopUp: action.payload,
+      };
+
+    case ACTION_TYPE.ADD_TO_SELECTED:
+      return {
+        ...state,
+        AddToSelectedProduct: action.payload,
+      };
+
+    case ACTION_TYPE.CLOSE_SIDE_BAR:
+      return {
+        ...state,
+        CloseSidebar: action.payload,
       };
 
     default:

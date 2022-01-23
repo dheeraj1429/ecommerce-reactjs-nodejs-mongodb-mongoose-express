@@ -45,6 +45,20 @@
   transition: all 0.3s ease;
 }
 
+.addToCartBtnOne {
+  background-color: var(--btnCL);
+  color: var(--mainColor);
+  border-radius: 30px;
+  padding: 0.5rem 4.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
 .addToCartBtn:hover {
+  background-color: var(--dark);
+}
+
+.addToCartBtnOne:hover {
   background-color: var(--dark);
 }

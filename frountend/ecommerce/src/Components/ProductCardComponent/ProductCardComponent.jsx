@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { addtoCard, showAddToCartPopup, addToSelected, addWishList } from '../../Redux/Action/action';
 import { useDispatch } from 'react-redux';
 import { singleProductSelected } from '../../Redux/Action/action';
 import CustomButtonComponent from '../../DashboardComponents/CustomButtonComponent/CustomButtonComponent';
@@ -10,12 +11,22 @@ function ProductCardComponent({ data }) {
   const dispatch = useDispatch();
   const [CardIcon, setCardIcon] = useState([{ el: 'far fa-eye' }, { el: 'far fa-heart' }, { el: 'fas fa-shopping-bag' }]);
 
+  const StoreDataFunction = function (el) {
+    if (el.el === 'fas fa-shopping-bag') {
+      dispatch(addtoCard(data));
+      dispatch(showAddToCartPopup(true));
+      dispatch(addToSelected(data));
+    } else if (el.el === 'far fa-heart') {
+      dispatch(addWishList(data));
+    }
+  };
+
   return (
     <div className="Product_card_div text-center">
       <div className="iconsDiv">
         {CardIcon.map((el) => (
           <div className="hover_icons mb-3">
-            <i class={el.el}></i>
+            <i class={el.el} onClick={() => StoreDataFunction(el)}></i>
           </div>
         ))}
       </div>
@@ -50,7 +61,7 @@ function ProductCardComponent({ data }) {
         </h4>
 
         <div className="button_div mt-3">
-          <CustomButtonComponent TextContent={'ADD TO CART'} btnCl={'addToCartBtn'} />
+          <CustomButtonComponent TextContent={'ADD TO CART'} btnCl={'addToCartBtn'} onClick={() => dispatch(addtoCard(data))} />
         </div>
       </div>
     </div>
