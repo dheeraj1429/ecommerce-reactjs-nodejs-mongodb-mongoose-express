@@ -17,10 +17,12 @@ const groupProducts = function (card, addTocardItems) {
   const present = card.find((el) => el._id === addTocardItems._id);
 
   if (present) {
-    return card.map((el) => (el._id === addTocardItems._id ? { ...el, quntity: el.quntity + 1, totalPrice: el.totalPrice + el.price } : el));
+    return card.map((el) =>
+      el._id === addTocardItems._id ? { ...el, quntity: el.quntity + addTocardItems.quntity, totalPrice: el.totalPrice + el.price } : el
+    );
   }
 
-  return [...card, { ...addTocardItems, quntity: 1, totalPrice: addTocardItems.price }];
+  return [...card, { ...addTocardItems, quntity: addTocardItems.quntity ? addTocardItems.quntity : 1, totalPrice: addTocardItems.price }];
 };
 
 const userReducer = (state = initalState, action) => {

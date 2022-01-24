@@ -5,6 +5,7 @@ import EditHeadingComponent from '../../DashboardComponents/EditHeadingComponent
 import SingleProductCardComponent from '../../Components/SingleProductCardComponent/SingleProductCardComponent';
 
 import './SingleProductPage.css';
+import FooterComponent from '../../Components/FooterComponent/FooterComponent';
 
 function SingleProductPage() {
   const selector = useSelector((state) => state.userStoreData.SingleProductSelected);
@@ -13,13 +14,17 @@ function SingleProductPage() {
       <NavbarComponent />
 
       <div className="side_padding py-3">
-        <div className="container-fluid ">
-          <div className="row mb-4">
-            <EditHeadingComponent heading={`Home / ${selector.category}`} style={'single_page_heading'} />
+        {selector !== null && selector ? (
+          <div className="container-fluid ">
+            <div className="row mb-4">
+              <EditHeadingComponent heading={`Home / ${selector.category}`} style={'single_page_heading'} />
+            </div>
+            {selector !== null && Object.keys(selector).includes('name') ? <SingleProductCardComponent data={selector} /> : null}
           </div>
-          {selector !== null && Object.keys(selector).includes('name') ? <SingleProductCardComponent data={selector} /> : null}
-        </div>
+        ) : null}
       </div>
+
+      <FooterComponent />
     </div>
   );
 }

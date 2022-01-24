@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router';
 import HomePage from './Pages/HomePage/HomePage';
 import SingleProductPage from './Pages/SingleProductPage/SingleProductPage';
+import SideBarComponent from './Components/SideBarComponent/SideBarComponent';
 
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ProductsUploadComponent from './DashboardComponents/ProductsUploadComponent/ProductsUploadComponent';
@@ -12,6 +13,8 @@ import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsCompo
 function App() {
   return (
     <div className="App">
+      <SideBarComponent />
+
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/shop/single-product" element={<SingleProductPage />} />

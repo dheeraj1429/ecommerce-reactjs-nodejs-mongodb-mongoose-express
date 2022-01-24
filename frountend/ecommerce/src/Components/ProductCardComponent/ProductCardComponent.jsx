@@ -13,12 +13,18 @@ function ProductCardComponent({ data }) {
 
   const StoreDataFunction = function (el) {
     if (el.el === 'fas fa-shopping-bag') {
-      dispatch(addtoCard(data));
+      dispatch(addtoCard(Object.assign(data, { quntity: 1 })));
       dispatch(showAddToCartPopup(true));
       dispatch(addToSelected(data));
     } else if (el.el === 'far fa-heart') {
       dispatch(addWishList(data));
     }
+  };
+
+  const AddToCartHandler = function () {
+    dispatch(addtoCard(Object.assign(data, { quntity: 1 })));
+    dispatch(showAddToCartPopup(true));
+    dispatch(addToSelected(data));
   };
 
   return (
@@ -30,7 +36,7 @@ function ProductCardComponent({ data }) {
           </div>
         ))}
       </div>
-      <div className="text-center" onClick={() => dispatch(singleProductSelected(data))}>
+      <div className="d-flex justify-content-center" onClick={() => dispatch(singleProductSelected(data))}>
         <Link
           to={{
             pathname: `shop/single-product`,
@@ -52,7 +58,7 @@ function ProductCardComponent({ data }) {
               return ar.map((el) => <i class="fas fa-star" key={el}></i>);
             })()}
           </div>
-          <p>(1)</p>
+          <p>({data.reviews})</p>
         </div>
 
         <h4 className="price">
@@ -61,7 +67,7 @@ function ProductCardComponent({ data }) {
         </h4>
 
         <div className="button_div mt-3">
-          <CustomButtonComponent TextContent={'ADD TO CART'} btnCl={'addToCartBtn'} onClick={() => dispatch(addtoCard(data))} />
+          <CustomButtonComponent TextContent={'ADD TO CART'} btnCl={'addToCartBtn'} onClick={AddToCartHandler} />
         </div>
       </div>
     </div>
