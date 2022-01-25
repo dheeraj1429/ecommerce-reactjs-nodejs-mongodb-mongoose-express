@@ -1,0 +1,32 @@
+.saleProduct_card_div {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--boxCl);
+  background-color: var(--mainColor);
+}
+
+.saleProduct_card_div img {
+  width: auto;
+  height: 350px;
+  margin-right: 1rem;
+}
+
+.sale_heading_content h5 {
+  font-size: 1rem;
+  color: var(--btnCL);
+}
+
+.sale_heading_content h4 {
+  font-size: 1.3rem;
+  color: var(--sideBarColor);
+}
+
+.sale_heading_content h1 {
+  font-size: 1.2rem;
+  color: var(--newCl);
+}
+
+.sale_heading_content p {
+  font-size: 0.9rem;
+  color: var(--price);
+}

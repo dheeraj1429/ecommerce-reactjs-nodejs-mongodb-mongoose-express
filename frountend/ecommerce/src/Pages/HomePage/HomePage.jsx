@@ -7,6 +7,7 @@ import HomePageBannerComponent from '../../Components/HomePageBannerComponent/Ho
 import ProductHeadingComponent from '../../Components/ProductHeadingComponent/ProductHeadingComponent';
 import ProductCardComponent from '../../Components/ProductCardComponent/ProductCardComponent';
 import AddToCartPopUpComponent from '../../Components/AddToCartPopUpComponent/AddToCartPopUpComponent';
+import FlashDealComponent from '../../Components/FlashDealComponent/FlashDealComponent';
 import FooterComponent from '../../Components/FooterComponent/FooterComponent';
 
 import './HomePage.css';
@@ -59,10 +60,17 @@ function HomePage() {
       <NavbarComponent />
       <HomePageBannerComponent />
       <AddToCartPopUpComponent isActive={selector.showAddToCardPopUp} />
-      <ProductHeadingComponent heading={'Hot Trending Products'} link={'shop'} />
 
+      <ProductHeadingComponent heading={'Flash Deals'} link={'shop'} />
+      <div className="Flash_deal_div">
+        <div className="pt-2 pb-4">
+          <FlashDealComponent />
+        </div>
+      </div>
+
+      <ProductHeadingComponent heading={'Hot Trending Products'} link={'shop'} />
       <div className="side_padding">
-        <div className="pt-2 pb-5 px-3">
+        <div className="pt-2 pb-4 px-3">
           <Slider {...settings}>
             {selector.allProducts !== null && selector.allProducts.success === true
               ? selector.allProducts.AllProducts.map((el) => <ProductCardComponent key={el._id} data={el} />)
