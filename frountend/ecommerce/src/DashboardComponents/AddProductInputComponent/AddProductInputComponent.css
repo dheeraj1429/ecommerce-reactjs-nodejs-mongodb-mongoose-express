@@ -18,3 +18,11 @@
   color: var(--sideBarColor);
   margin-bottom: 0.5rem;
 }
+.style2 input {
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  height: 50px;
+}
+.style2 label {
+  font-size: 0.8rem;
+}

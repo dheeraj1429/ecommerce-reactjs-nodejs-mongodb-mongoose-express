@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Products Data
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -75,6 +76,34 @@ const productSchema = new mongoose.Schema({
   },
 });
 
-const Product = new mongoose.model('AllProduct', productSchema);
+// user data
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'please enter your name'],
+  },
 
-module.exports = Product;
+  email: {
+    type: String,
+    unique: true,
+    required: [true, 'please enter your email'],
+  },
+
+  password: {
+    type: String,
+    required: [true, 'please enter your password'],
+  },
+
+  loginAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const Product = new mongoose.model('AllProduct', productSchema);
+const UserDataSchema = new mongoose.model('user', userSchema);
+
+module.exports = {
+  Product,
+  UserDataSchema,
+};

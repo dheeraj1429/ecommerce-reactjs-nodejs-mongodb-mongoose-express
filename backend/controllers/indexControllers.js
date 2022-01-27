@@ -1,11 +1,11 @@
-const Product = require('../models/productModel');
+const StoreData = require('../models/productModel');
 
 // Create a product
 const createProducts = async (req, res) => {
   console.log(req.body.data);
 
   try {
-    const productRef = await Product.create(req.body.data);
+    const productRef = await StoreData.Product.create(req.body.data);
 
     if (productRef) {
       res.status(200).json({
@@ -26,7 +26,7 @@ const createProducts = async (req, res) => {
 // Fetch all produst
 const fetchAllProducts = async (req, res) => {
   try {
-    const AllProducts = await Product.find();
+    const AllProducts = await StoreData.Product.find();
 
     if (AllProducts) {
       res.status(200).json({
@@ -44,16 +44,7 @@ const fetchAllProducts = async (req, res) => {
   }
 };
 
-// search product from the database
-const serchProduct = async (req, res) => {
-  try {
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 module.exports = {
   createProducts,
   fetchAllProducts,
-  serchProduct,
 };

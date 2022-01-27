@@ -1,0 +1,30 @@
+.signInContent h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.line_div {
+  display: flex;
+  align-items: center;
+}
+
+.line_div > div {
+  width: 100px;
+  height: 3px;
+  background-color: var(--btnCL);
+  border-radius: 10px;
+}
+
+.line_div h3 {
+  font-size: 1.2rem;
+  color: var(--btnCL);
+}
+
+.signInCard_div p {
+  font-size: 0.8rem;
+}
+
+.signInCard_div span {
+  color: var(--btnCL);
+  cursor: pointer;
+}

@@ -82,30 +82,7 @@ export const addtoCard = function (data) {
   };
 };
 
-// search product from the databse
-export const searchProducts = function (data) {
-  return async function (dispatch) {
-    try {
-      const ref = await fetch('', {
-        headers: {
-          'content-type': 'application/json',
-        },
-
-        method: 'POST',
-
-        body: JSON.stringify({
-          data,
-        }),
-      });
-
-      const data = await ref.json();
-
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-};
+// search product from the databse -----------------
 
 // Show Add To Cart Popup
 export const showAddToCartPopup = function (data) {
@@ -136,5 +113,69 @@ export const closeSiderBar = function (data) {
   return {
     type: ACTION_TYPE.CLOSE_SIDE_BAR,
     payload: data,
+  };
+};
+
+// sign in and login user
+export const signIn = function (data) {
+  return async function (dispatch) {
+    try {
+      const userRef = await fetch('/user/new', {
+        headers: {
+          'content-type': 'application/json',
+        },
+
+        method: 'POST',
+
+        body: JSON.stringify({
+          data,
+        }),
+      });
+
+      const userDataRef = await userRef.json();
+
+      dispatch({
+        type: ACTION_TYPE.USER_LOGIN_STATUS,
+        payload: userDataRef,
+      });
+    } catch (err) {
+      dispatch({
+        type: ACTION_TYPE.USER_LOGIN_STATUS,
+        payload: err,
+      });
+    }
+  };
+};
+
+// Find User
+export const FindUser = function (data) {
+  console.log(data);
+
+  return async function (dispatch) {
+    try {
+      const FindUserRef = await fetch('/user/find', {
+        headers: {
+          'content-type': 'application/json',
+        },
+
+        method: 'POST',
+
+        body: JSON.stringify({
+          data,
+        }),
+      });
+
+      const userRef = await FindUserRef.json();
+
+      dispatch({
+        type: ACTION_TYPE.USER_LOGIN_STATUS,
+        payload: userRef,
+      });
+    } catch (err) {
+      dispatch({
+        type: ACTION_TYPE.USER_LOGIN_STATUS,
+        payload: err,
+      });
+    }
   };
 };

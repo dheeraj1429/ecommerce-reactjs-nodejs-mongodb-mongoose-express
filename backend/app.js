@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 
 require('./models/db');
+
 const indexRouter = require('./routes/indexRoute');
+const userRouter = require('./routes/userRouter');
 
 const app = express();
 app.use(express.json());
@@ -15,6 +17,7 @@ app.use(cors());
 
 // Routes
 app.use('/products', indexRouter);
+app.use('/user', userRouter);
 
 // Server
 app.listen(port, () => {

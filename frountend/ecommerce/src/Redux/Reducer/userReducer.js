@@ -10,6 +10,7 @@ const initalState = {
   AddToSelectedProduct: null,
   WishListProducts: [],
   CloseSidebar: false,
+  UserLoginStatus: null,
 };
 
 // Group Add To card product
@@ -85,6 +86,12 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         CloseSidebar: action.payload,
+      };
+
+    case ACTION_TYPE.USER_LOGIN_STATUS:
+      return {
+        ...state,
+        UserLoginStatus: action.payload,
       };
 
     default:
