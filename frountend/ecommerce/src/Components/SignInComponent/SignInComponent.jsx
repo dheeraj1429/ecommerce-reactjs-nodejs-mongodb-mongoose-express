@@ -30,10 +30,6 @@ function SignInComponent() {
     }
   };
 
-  // if (selector && selector.success == true) {
-  //   navigation('/');
-  // }
-
   return (
     <div className="signInContent">
       <h1 className="mb-5">Sign Up</h1>

@@ -29,7 +29,13 @@ function SingUpComponent() {
   const storeDataFunction = function () {
     const { name, email, password, confirmpassword } = UserData;
     if (name && email && password && confirmpassword) {
-      dispatch(signIn({ name, email, password }));
+      if (password === confirmpassword) {
+        dispatch(signIn({ name, email, password }));
+      } else {
+        alert('password must be same');
+      }
+    } else {
+      alert('please fill the filds');
     }
   };
 

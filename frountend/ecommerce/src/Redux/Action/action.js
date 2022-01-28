@@ -167,6 +167,8 @@ export const FindUser = function (data) {
 
       const userRef = await FindUserRef.json();
 
+      console.log(userRef);
+
       dispatch({
         type: ACTION_TYPE.USER_LOGIN_STATUS,
         payload: userRef,
