@@ -6,6 +6,7 @@ import './NavbarIconsComponent.css';
 
 function NavbarIconsComponent({ icon, title, subTitle, shop, link, onClick }) {
   const selector = useSelector((state) => state.userStoreData.AddToCart);
+
   return (
     <div className="navbar_icons_div d-flex align-items-center">
       {shop ? (
@@ -22,8 +23,10 @@ function NavbarIconsComponent({ icon, title, subTitle, shop, link, onClick }) {
       <div className="ms-3">
         <p>{title}</p>
         {link ? (
-          <Link to={link}>
-            <h3 className="mb-0">{subTitle}</h3>
+          <Link to={subTitle == 'log out' ? '' : `/${link}`}>
+            <h3 onClick={subTitle == 'log out' ? () => sessionStorage.removeItem('userinfo') : null} className="mb-0">
+              {subTitle}
+            </h3>
           </Link>
         ) : (
           <h3 className="mb-0">{subTitle}</h3>

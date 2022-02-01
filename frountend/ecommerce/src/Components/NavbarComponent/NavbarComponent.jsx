@@ -37,7 +37,14 @@ function NavbarComponent() {
             <ProductSearchBarComponent />
           </div>
           <div className="col-12 col-sm-12 col-md-4 d-flex align-items-center justify-content-around">
-            <NavbarIconsComponent icon={'fas fa-user'} title={'Sign In'} subTitle={'Create an Account'} link={'account/login'} />
+            <NavbarIconsComponent
+              icon={'fas fa-user'}
+              title={
+                selector && selector.UserLoginStatus && selector.UserLoginStatus.success == true ? selector.UserLoginStatus.data.name : 'Sign In'
+              }
+              subTitle={selector && selector.UserLoginStatus && selector.UserLoginStatus.success == true ? 'log out' : 'Create an Account'}
+              link={'account/login'}
+            />
             <NavbarIconsComponent icon={'fas fa-heart'} title={'Favorite'} subTitle={'My Wishlist'} link={'mywishlist'} />
             <NavbarIconsComponent
               icon={'fas fa-shopping-bag'}

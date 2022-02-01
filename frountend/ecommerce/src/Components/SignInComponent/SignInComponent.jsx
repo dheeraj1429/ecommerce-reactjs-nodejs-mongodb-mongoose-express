@@ -34,14 +34,10 @@ function SignInComponent() {
   };
 
   useEffect(() => {
-    if (selector && selector.data) {
-      if (selector && selector.data.success == true) {
-        navigation('/');
-      } else {
-        setUserLoginData(selector.data.massage);
-      }
+    if (selector && selector.success == true) {
+      navigation('/');
     }
-  }, [selector && selector.data.success == true]);
+  }, [selector && selector.success == true]);
 
   return (
     <div className="signInContent">

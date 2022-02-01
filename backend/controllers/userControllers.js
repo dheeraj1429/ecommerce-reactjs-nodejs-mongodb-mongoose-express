@@ -15,6 +15,9 @@ const inserNewUser = async (req, res) => {
     // save the user into the database
     const storeUserRef = await newUser.save();
 
+    // Genrate the user token
+    const token = await newUser.genrateUserToken();
+
     // send back the res
     if (storeUserRef) {
       return res.status(201).json({
@@ -23,6 +26,7 @@ const inserNewUser = async (req, res) => {
         data: {
           name,
           email,
+          token,
         },
       });
     } else {
@@ -40,12 +44,16 @@ const inserNewUser = async (req, res) => {
 const userFind = async (req, res) => {
   try {
     const { name, email, password } = req.body.data;
+    console.log(name, email, password);
 
     // find the user from the database
     const userFindDb = await UserModel.findOne({ $and: [{ name }, { email }] });
 
     // match the hashing password
     const isMatch = await bcryptjs.compare(password, userFindDb.password);
+
+    // Genrate the user token
+    const token = await userFindDb.genrateUserToken();
 
     // send back the response
     if (isMatch) {
@@ -55,10 +63,11 @@ const userFind = async (req, res) => {
         data: {
           name,
           email,
+          token,
         },
       });
     } else {
-      return res.status(200).json({
+      return res.status(400).json({
         success: false,
         massage: 'no user found',
       });

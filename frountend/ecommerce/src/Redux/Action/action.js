@@ -101,6 +101,10 @@ export const signIn = function (data) {
     try {
       const userInserData = await axios.post('/user/new', { data }, { headers });
 
+      if (userInserData.data) {
+        sessionStorage.setItem('userinfo', JSON.stringify(userInserData.data));
+      }
+
       if (userInserData) {
         dispatch({
           type: ACTION_TYPE.USER_LOGIN_STAUS,
@@ -119,12 +123,24 @@ export const FindUser = function (data) {
     try {
       const userFindFromDb = await axios.post('/user/find', { data }, { headers });
 
+      if (userFindFromDb.data) {
+        sessionStorage.setItem('userinfo', JSON.stringify(userFindFromDb.data));
+      }
+
       dispatch({
         type: ACTION_TYPE.USER_LOGIN_STAUS,
-        payload: userFindFromDb,
+        payload: userFindFromDb.data,
       });
     } catch (err) {
       console.log(err);
     }
+  };
+};
+
+// stay login
+export const stayLoginUser = function (data) {
+  return {
+    type: ACTION_TYPE.USER_LOGIN_STAUS,
+    payload: data,
   };
 };

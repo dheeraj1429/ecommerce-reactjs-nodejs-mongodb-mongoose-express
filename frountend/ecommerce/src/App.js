@@ -1,4 +1,7 @@
 import './App.css';
+import { useEffect } from 'react';
+import { stayLoginUser } from './Redux/Action/action';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router';
 
 // Pages
@@ -16,6 +19,16 @@ import DashboardProductsComponent from './DashboardComponents/DashboardProductsC
 import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsComponent/ProductsDetailsComponent';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const userInfo = sessionStorage.getItem('userinfo');
+    const userData = JSON.parse(userInfo);
+    if (userInfo) {
+      dispatch(stayLoginUser(userData));
+    }
+  }, []);
+
   return (
     <div className="App">
       <SideBarComponent />

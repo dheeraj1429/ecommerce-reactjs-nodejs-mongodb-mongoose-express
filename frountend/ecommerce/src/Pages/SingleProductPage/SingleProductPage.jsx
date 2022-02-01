@@ -9,6 +9,7 @@ import FooterComponent from '../../Components/FooterComponent/FooterComponent';
 
 function SingleProductPage() {
   const selector = useSelector((state) => state.userStoreData.SingleProductSelected);
+
   return (
     <div className="Single_product_page">
       <NavbarComponent />
