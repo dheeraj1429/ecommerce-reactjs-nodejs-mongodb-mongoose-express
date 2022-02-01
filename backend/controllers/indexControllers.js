@@ -1,11 +1,9 @@
-const StoreData = require('../models/productModel');
+const Product = require('../models/productModel');
 
 // Create a product
 const createProducts = async (req, res) => {
-  console.log(req.body.data);
-
   try {
-    const productRef = await StoreData.Product.create(req.body.data);
+    const productRef = await Product.create(req.body.data);
 
     if (productRef) {
       res.status(200).json({
@@ -25,8 +23,9 @@ const createProducts = async (req, res) => {
 
 // Fetch all produst
 const fetchAllProducts = async (req, res) => {
+  console.log(req.body);
   try {
-    const AllProducts = await StoreData.Product.find();
+    const AllProducts = await Product.find();
 
     if (AllProducts) {
       res.status(200).json({

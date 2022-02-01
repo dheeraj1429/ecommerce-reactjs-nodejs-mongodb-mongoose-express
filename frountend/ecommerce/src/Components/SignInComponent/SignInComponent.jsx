@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FindUser } from '../../Redux/Action/action';
 import AddProductInputComponent from '../../DashboardComponents/AddProductInputComponent/AddProductInputComponent';
@@ -8,7 +8,10 @@ import CustomButtonComponent from '../../DashboardComponents/CustomButtonCompone
 import './SignInComponent.css';
 
 function SignInComponent() {
+  const [UserLoginData, setUserLoginData] = useState(null);
+  const navigation = useNavigate();
   const selector = useSelector((state) => state.userStoreData.UserLoginStatus);
+
   const dispatch = useDispatch();
   const [UserData, setUserData] = useState({
     name: '',
@@ -29,6 +32,16 @@ function SignInComponent() {
       dispatch(FindUser({ name, email, password }));
     }
   };
+
+  useEffect(() => {
+    if (selector && selector.data) {
+      if (selector && selector.data.success == true) {
+        navigation('/');
+      } else {
+        setUserLoginData(selector.data.massage);
+      }
+    }
+  }, [selector && selector.data.success == true]);
 
   return (
     <div className="signInContent">
@@ -59,12 +72,14 @@ function SignInComponent() {
         <CustomButtonComponent TextContent={'Sign Up'} btnCl={'addToCartBtnOne'} onClick={FindUserHandler} />
       </div>
 
-      <p className="mb-5">
+      <p className="">
         Create an account
         <Link to="/account/signup">
           <span> Sign In</span>
         </Link>
       </p>
+
+      <h3 className="text-center mb-4">{UserLoginData !== null ? UserLoginData : null}</h3>
     </div>
   );
 }

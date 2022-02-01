@@ -88,7 +88,7 @@ const userReducer = (state = initalState, action) => {
         CloseSidebar: action.payload,
       };
 
-    case ACTION_TYPE.USER_LOGIN_STATUS:
+    case ACTION_TYPE.USER_LOGIN_STAUS:
       return {
         ...state,
         UserLoginStatus: action.payload,

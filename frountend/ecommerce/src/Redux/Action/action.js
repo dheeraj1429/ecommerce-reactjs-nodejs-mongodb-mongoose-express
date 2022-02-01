@@ -1,34 +1,22 @@
 import { ACTION_TYPE } from '../ActionType/actionType';
+import axios from 'axios';
+
+const headers = {
+  'Content-type': 'application/json',
+};
 
 // Insert New Products
 export const addProduct = function (data) {
   return async function (dispatch) {
     try {
-      const ref = await fetch('/products/new', {
-        headers: {
-          'Content-type': 'application/json',
-        },
-        method: 'POST',
-
-        body: JSON.stringify({
-          data,
-        }),
-      });
-
-      const ProductRef = await ref.json();
+      const ref = await axios.post('/products/new', { data }, { headers });
 
       dispatch({
         type: ACTION_TYPE.ADD_PRODUCTS,
-        payload: ProductRef,
+        payload: ref.data,
       });
     } catch (err) {
-      dispatch({
-        type: ACTION_TYPE.ADD_PRODUCTS,
-        payload: {
-          success: false,
-          message: 'Something worng!!',
-        },
-      });
+      console.log(err);
     }
   };
 };
@@ -42,18 +30,11 @@ export const productDataInfo = function () {
 // Fetch all products from the db
 export const fetchAllProducts = function () {
   return async function (dispatch) {
-    const ref = await fetch('/products/get/all', {
-      headers: {
-        'Content-type': 'application/json',
-      },
-      method: 'POST',
-    });
-
-    const ProductRef = await ref.json();
+    const ref = await axios.post('/products/get/all', { headers });
 
     dispatch({
       type: ACTION_TYPE.FETCH_ALL_PRODUCTS,
-      payload: ProductRef,
+      payload: ref.data,
     });
   };
 };
@@ -81,8 +62,6 @@ export const addtoCard = function (data) {
     payload: data,
   };
 };
-
-// search product from the databse -----------------
 
 // Show Add To Cart Popup
 export const showAddToCartPopup = function (data) {
@@ -120,64 +99,32 @@ export const closeSiderBar = function (data) {
 export const signIn = function (data) {
   return async function (dispatch) {
     try {
-      const userRef = await fetch('/user/new', {
-        headers: {
-          'content-type': 'application/json',
-        },
+      const userInserData = await axios.post('/user/new', { data }, { headers });
 
-        method: 'POST',
-
-        body: JSON.stringify({
-          data,
-        }),
-      });
-
-      const userDataRef = await userRef.json();
-
-      dispatch({
-        type: ACTION_TYPE.USER_LOGIN_STATUS,
-        payload: userDataRef,
-      });
+      if (userInserData) {
+        dispatch({
+          type: ACTION_TYPE.USER_LOGIN_STAUS,
+          payload: userInserData.data,
+        });
+      }
     } catch (err) {
-      dispatch({
-        type: ACTION_TYPE.USER_LOGIN_STATUS,
-        payload: err,
-      });
+      console.log(err);
     }
   };
 };
 
 // Find User
 export const FindUser = function (data) {
-  console.log(data);
-
   return async function (dispatch) {
     try {
-      const FindUserRef = await fetch('/user/find', {
-        headers: {
-          'content-type': 'application/json',
-        },
-
-        method: 'POST',
-
-        body: JSON.stringify({
-          data,
-        }),
-      });
-
-      const userRef = await FindUserRef.json();
-
-      console.log(userRef);
+      const userFindFromDb = await axios.post('/user/find', { data }, { headers });
 
       dispatch({
-        type: ACTION_TYPE.USER_LOGIN_STATUS,
-        payload: userRef,
+        type: ACTION_TYPE.USER_LOGIN_STAUS,
+        payload: userFindFromDb,
       });
     } catch (err) {
-      dispatch({
-        type: ACTION_TYPE.USER_LOGIN_STATUS,
-        payload: err,
-      });
+      console.log(err);
     }
   };
 };

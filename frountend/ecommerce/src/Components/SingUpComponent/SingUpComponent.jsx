@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signIn } from '../../Redux/Action/action';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,9 +39,11 @@ function SingUpComponent() {
     }
   };
 
-  if (selector && selector.success == true) {
-    navigation('/');
-  }
+  useEffect(() => {
+    if (selector && selector.success == true) {
+      navigation('/');
+    }
+  }, [selector && selector.success == true]);
 
   return (
     <div className="signInContent">

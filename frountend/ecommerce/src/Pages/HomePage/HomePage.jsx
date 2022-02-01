@@ -15,6 +15,7 @@ import './HomePage.css';
 function HomePage() {
   const selector = useSelector((state) => state.userStoreData);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
