@@ -44,7 +44,6 @@ const inserNewUser = async (req, res) => {
 const userFind = async (req, res) => {
   try {
     const { name, email, password } = req.body.data;
-    console.log(name, email, password);
 
     // find the user from the database
     const userFindDb = await UserModel.findOne({ $and: [{ name }, { email }] });

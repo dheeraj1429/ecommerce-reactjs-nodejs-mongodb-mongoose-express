@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { addtoCard, showAddToCartPopup, addToSelected, addWishList } from '../../Redux/Action/action';
+import { addtoCard, showAddToCartPopup, addToSelected, addWishList, showPrevimage, showSelectedPrevImage } from '../../Redux/Action/action';
 import { useDispatch } from 'react-redux';
 import { singleProductSelected } from '../../Redux/Action/action';
 import CustomButtonComponent from '../../DashboardComponents/CustomButtonComponent/CustomButtonComponent';
 
 import './ProductCardComponent.css';
 
-function ProductCardComponent({ data }) {
+function ProductCardComponent({ data, style }) {
   const dispatch = useDispatch();
   const [CardIcon, setCardIcon] = useState([{ el: 'far fa-eye' }, { el: 'far fa-heart' }, { el: 'fas fa-shopping-bag' }]);
 
@@ -18,6 +18,9 @@ function ProductCardComponent({ data }) {
       dispatch(addToSelected(data));
     } else if (el.el === 'far fa-heart') {
       dispatch(addWishList(data));
+    } else if (el.el == 'far fa-eye') {
+      dispatch(showPrevimage(true));
+      dispatch(showSelectedPrevImage(data));
     }
   };
 
@@ -28,7 +31,7 @@ function ProductCardComponent({ data }) {
   };
 
   return (
-    <div className="Product_card_div text-center">
+    <div className={style ? `Product_card_div text-center ${style}` : 'Product_card_div text-center'}>
       <div className="iconsDiv">
         {CardIcon.map((el) => (
           <div className="hover_icons mb-3">
@@ -39,7 +42,7 @@ function ProductCardComponent({ data }) {
       <div className="d-flex justify-content-center" onClick={() => dispatch(singleProductSelected(data))}>
         <Link
           to={{
-            pathname: `shop/single-product`,
+            pathname: `/shop/single-product`,
           }}
         >
           <img src={data.image[0].url} alt="" />

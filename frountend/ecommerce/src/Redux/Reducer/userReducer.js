@@ -11,6 +11,8 @@ const initalState = {
   WishListProducts: [],
   CloseSidebar: false,
   UserLoginStatus: null,
+  ShowPrevImageDiv: false,
+  ShowSelectedPrevImage: null,
 };
 
 // Group Add To card product
@@ -92,6 +94,18 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         UserLoginStatus: action.payload,
+      };
+
+    case ACTION_TYPE.SHOW_PRE_IMAGE:
+      return {
+        ...state,
+        ShowPrevImageDiv: action.payload,
+      };
+
+    case ACTION_TYPE.SHOW_PREV_SELECTED_IMAGE:
+      return {
+        ...state,
+        ShowSelectedPrevImage: action.payload,
       };
 
     default:

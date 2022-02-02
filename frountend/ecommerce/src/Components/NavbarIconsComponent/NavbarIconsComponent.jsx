@@ -24,7 +24,7 @@ function NavbarIconsComponent({ icon, title, subTitle, shop, link, onClick }) {
         <p>{title}</p>
         {link ? (
           <Link to={subTitle == 'log out' ? '' : `/${link}`}>
-            <h3 onClick={subTitle == 'log out' ? () => sessionStorage.removeItem('userinfo') : null} className="mb-0">
+            <h3 onClick={subTitle == 'log out' ? () => localStorage.removeItem('userinfo') : null} className="mb-0">
               {subTitle}
             </h3>
           </Link>

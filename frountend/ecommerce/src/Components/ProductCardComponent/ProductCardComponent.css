@@ -81,3 +81,12 @@
 .hover_icons i {
   font-size: 0.8rem;
 }
+
+.style2 {
+  width: 380px;
+}
+
+.style2 img {
+  width: auto;
+  height: 280px;
+}

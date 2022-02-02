@@ -60,7 +60,6 @@ function HomePage() {
     <div className="HomePage_div">
       <NavbarComponent />
       <HomePageBannerComponent />
-      <AddToCartPopUpComponent isActive={selector.showAddToCardPopUp} />
 
       <ProductHeadingComponent heading={'Flash Deals'} link={'shop'} />
       <div className="Flash_deal_div">

@@ -1,8 +1,12 @@
 import './App.css';
 import { useEffect } from 'react';
 import { stayLoginUser } from './Redux/Action/action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router';
+
+// Components
+import AddToCartPopUpComponent from './Components/AddToCartPopUpComponent/AddToCartPopUpComponent';
+import ProductPrevComponent from './Components/ProductPrevComponent/ProductPrevComponent';
 
 // Pages
 import HomePage from './Pages/HomePage/HomePage';
@@ -11,6 +15,7 @@ import SideBarComponent from './Components/SideBarComponent/SideBarComponent';
 import SingInAndLoginComponent from './Components/SingInAndLoginComponent/SingInAndLoginComponent';
 import SignInComponent from './Components/SignInComponent/SignInComponent';
 import SingUpComponent from './Components/SingUpComponent/SingUpComponent';
+import ShopPage from './Pages/ShopPage/ShopPage';
 
 // Dashboard
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -19,10 +24,11 @@ import DashboardProductsComponent from './DashboardComponents/DashboardProductsC
 import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsComponent/ProductsDetailsComponent';
 
 function App() {
+  const selector = useSelector((state) => state.userStoreData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const userInfo = sessionStorage.getItem('userinfo');
+    const userInfo = localStorage.getItem('userinfo');
     const userData = JSON.parse(userInfo);
     if (userInfo) {
       dispatch(stayLoginUser(userData));
@@ -32,10 +38,13 @@ function App() {
   return (
     <div className="App">
       <SideBarComponent />
+      <AddToCartPopUpComponent isActive={selector.showAddToCardPopUp} />
+      <ProductPrevComponent isActive={selector.ShowPrevImageDiv} />
 
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/shop/single-product" element={<SingleProductPage />} />
+        <Route exact path="/shop" element={<ShopPage />} />
         <Route exact path="/account" element={<SingInAndLoginComponent />}>
           <Route path="login" element={<SignInComponent />} />
           <Route path="signup" element={<SingUpComponent />} />

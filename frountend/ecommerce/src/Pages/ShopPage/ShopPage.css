@@ -1,0 +1,19 @@
+.Shop_product_div {
+  width: 100%;
+}
+.shop_product_div_inner {
+  width: 100%;
+  background-color: var(--mainColor);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--boxCl);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.shop_page_filter_div {
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: var(--mainColor);
+  box-shadow: 0 0 10px var(--boxCl);
+}

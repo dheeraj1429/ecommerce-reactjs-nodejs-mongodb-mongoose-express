@@ -102,7 +102,7 @@ export const signIn = function (data) {
       const userInserData = await axios.post('/user/new', { data }, { headers });
 
       if (userInserData.data) {
-        sessionStorage.setItem('userinfo', JSON.stringify(userInserData.data));
+        localStorage.setItem('userinfo', JSON.stringify(userInserData.data));
       }
 
       if (userInserData) {
@@ -124,7 +124,7 @@ export const FindUser = function (data) {
       const userFindFromDb = await axios.post('/user/find', { data }, { headers });
 
       if (userFindFromDb.data) {
-        sessionStorage.setItem('userinfo', JSON.stringify(userFindFromDb.data));
+        localStorage.setItem('userinfo', JSON.stringify(userFindFromDb.data));
       }
 
       dispatch({
@@ -141,6 +141,22 @@ export const FindUser = function (data) {
 export const stayLoginUser = function (data) {
   return {
     type: ACTION_TYPE.USER_LOGIN_STAUS,
+    payload: data,
+  };
+};
+
+// Show prev product Image
+export const showPrevimage = function (data) {
+  return {
+    type: ACTION_TYPE.SHOW_PRE_IMAGE,
+    payload: data,
+  };
+};
+
+// show selected product image
+export const showSelectedPrevImage = function (data) {
+  return {
+    type: ACTION_TYPE.SHOW_PREV_SELECTED_IMAGE,
     payload: data,
   };
 };
