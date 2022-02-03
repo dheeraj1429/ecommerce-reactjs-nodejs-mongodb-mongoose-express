@@ -13,7 +13,7 @@ function SideBarComponent() {
         isActive={true}
         title={'Dashboard'}
         Icon={'fas fa-house-user'}
-        list={[{ el: 'Default' }, { el: 'Sass' }, { el: 'Crpto' }, { el: 'Blog' }]}
+        list={[{ el: 'Users' }, { el: 'Sass' }, { el: 'Crpto' }, { el: 'Blog' }]}
       />
       <DashboardHeadingComponent heading={'Apps'} />
       <MenuComponent secondIcon={true} isActive={false} title={'Chat'} Icon={'far fa-comment-alt'} />
@@ -25,11 +25,6 @@ function SideBarComponent() {
         list={[
           { el: 'Products', link: 'products' },
           { el: 'Details', link: 'products/details' },
-          // { el: 'Orders' },
-          // { el: 'Customers' },
-          // { el: 'Card' },
-          // { el: 'Checkout' },
-          // { el: 'Shop' },
           { el: 'Add Products', link: 'add-products' },
         ]}
       />

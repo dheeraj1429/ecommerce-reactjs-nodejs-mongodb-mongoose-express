@@ -79,7 +79,25 @@ const userFind = async (req, res) => {
   }
 };
 
+// get the all users from the database
+const getAllUserFromDb = async function (req, res) {
+  try {
+    // fetch all users
+    const userRefData = await UserModel.find();
+
+    if (userRefData) {
+      // send back response
+      res.status(200).json({
+        userRefData,
+      });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   inserNewUser,
   userFind,
+  getAllUserFromDb,
 };

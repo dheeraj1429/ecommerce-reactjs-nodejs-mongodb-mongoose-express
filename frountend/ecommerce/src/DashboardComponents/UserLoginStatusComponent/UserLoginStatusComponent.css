@@ -1,0 +1,10 @@
+.allUserLogin_div {
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--light);
+  padding: 0.5rem 0;
+}
+
+.allUserLogin_div img {
+  width: auto;
+  height: 40px;
+}

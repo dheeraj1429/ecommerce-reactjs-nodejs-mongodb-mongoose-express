@@ -19,7 +19,7 @@ function Dashboard() {
     if (userInfo) {
       const userData = JSON.parse(userInfo);
 
-      if (!userData.data.admin) {
+      if (userData.data.admin == 'user') {
         navigation('/');
       }
     } else {

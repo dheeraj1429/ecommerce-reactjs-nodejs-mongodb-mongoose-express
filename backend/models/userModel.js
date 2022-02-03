@@ -18,8 +18,8 @@ const User = new mongoose.Schema({
     required: [true, 'please enter the password'],
   },
   isAdmin: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: 'user',
   },
   tokens: [
     {

@@ -13,6 +13,7 @@ const initalState = {
   UserLoginStatus: null,
   ShowPrevImageDiv: false,
   ShowSelectedPrevImage: null,
+  AllAppUsersInfo: null,
 };
 
 // Group Add To card product
@@ -26,6 +27,16 @@ const groupProducts = function (card, addTocardItems) {
   }
 
   return [...card, { ...addTocardItems, quntity: addTocardItems.quntity ? addTocardItems.quntity : 1, totalPrice: addTocardItems.price }];
+};
+
+// Remove the password from the fetch users info => Security
+const removePasswordFetch = function (data) {
+  const userDataSc = data.userRefData.map((el) => {
+    el.password = undefined;
+    return el;
+  });
+
+  return userDataSc;
 };
 
 const userReducer = (state = initalState, action) => {
@@ -106,6 +117,12 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         ShowSelectedPrevImage: action.payload,
+      };
+
+    case ACTION_TYPE.GET_ALL_USER_INFO:
+      return {
+        ...state,
+        AllAppUsersInfo: removePasswordFetch(action.payload),
       };
 
     default:

@@ -160,3 +160,21 @@ export const showSelectedPrevImage = function (data) {
     payload: data,
   };
 };
+
+// Get all users from the databse
+export const getAllInfoAboutUser = function () {
+  return async function (dispatch) {
+    try {
+      const getUserInfoData = await axios.post('/user/get-users', { headers });
+
+      if (getUserInfoData) {
+        dispatch({
+          type: ACTION_TYPE.GET_ALL_USER_INFO,
+          payload: getUserInfoData.data,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};

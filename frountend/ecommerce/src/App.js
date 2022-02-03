@@ -22,6 +22,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import ProductsUploadComponent from './DashboardComponents/ProductsUploadComponent/ProductsUploadComponent';
 import DashboardProductsComponent from './DashboardComponents/DashboardProductsComponent/DashboardProductsComponent';
 import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsComponent/ProductsDetailsComponent';
+import LoginUserComponent from './DashboardComponents/LoginUserComponent/LoginUserComponent';
 
 function App() {
   const selector = useSelector((state) => state.userStoreData);
@@ -53,6 +54,7 @@ function App() {
           <Route path="add-products" element={<ProductsUploadComponent />} />
           <Route path="products" element={<DashboardProductsComponent />} />
           <Route path="products/details" element={<ProductsDetailsComponent />} />
+          <Route path="users" element={<LoginUserComponent />} />
         </Route>
       </Routes>
     </div>
