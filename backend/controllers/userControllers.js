@@ -1,6 +1,5 @@
 const UserModel = require('../models/userModel');
 const bcryptjs = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const inserNewUser = async (req, res) => {
   try {
@@ -96,8 +95,31 @@ const getAllUserFromDb = async function (req, res) {
   }
 };
 
+// Change user info data
+const changeUserInfoData = async function (req, res) {
+  try {
+    // find the right user
+    const { id, name, UserDbInfo } = req.body.data;
+
+    // update the filds
+    const userUpdateRef = await UserModel.updateOne({ $or: [{ _id: id }, { name }] }, { $set: { isAdmin: UserDbInfo.isAdmin } });
+
+    // send back the response
+    if (userUpdateRef) {
+      return res.status(200).json({
+        success: true,
+      });
+    }
+  } catch (err) {
+    return res.status(400).json({
+      massage: 'something worng',
+    });
+  }
+};
+
 module.exports = {
   inserNewUser,
   userFind,
   getAllUserFromDb,
+  changeUserInfoData,
 };

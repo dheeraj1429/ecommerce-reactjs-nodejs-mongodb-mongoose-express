@@ -14,6 +14,7 @@ const initalState = {
   ShowPrevImageDiv: false,
   ShowSelectedPrevImage: null,
   AllAppUsersInfo: null,
+  ChangeUserInfoStatus: null,
 };
 
 // Group Add To card product
@@ -123,6 +124,12 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         AllAppUsersInfo: removePasswordFetch(action.payload),
+      };
+
+    case ACTION_TYPE.CHANGE_USER_INFO:
+      return {
+        ...state,
+        ChangeUserInfoStatus: action.payload,
       };
 
     default:

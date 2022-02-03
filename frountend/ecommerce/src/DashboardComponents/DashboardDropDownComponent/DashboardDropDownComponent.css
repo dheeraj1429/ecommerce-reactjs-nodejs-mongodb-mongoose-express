@@ -18,3 +18,10 @@
   border: 1px solid var(--lightSmoothgray);
   padding: 0.6rem;
 }
+
+.drop_down_style select {
+  background-color: transparent;
+  border: none;
+  width: auto;
+  padding: 0;
+}

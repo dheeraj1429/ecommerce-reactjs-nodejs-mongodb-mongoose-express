@@ -8,13 +8,7 @@ function SideBarComponent() {
   return (
     <div className="Sidebar_Div">
       <DashboardHeadingComponent heading={'Home'} />
-      <MenuComponent
-        secondIcon={false}
-        isActive={true}
-        title={'Dashboard'}
-        Icon={'fas fa-house-user'}
-        list={[{ el: 'Users' }, { el: 'Sass' }, { el: 'Crpto' }, { el: 'Blog' }]}
-      />
+      <MenuComponent secondIcon={false} isActive={true} title={'Dashboard'} Icon={'fas fa-house-user'} list={[{ el: 'Users' }]} />
       <DashboardHeadingComponent heading={'Apps'} />
       <MenuComponent secondIcon={true} isActive={false} title={'Chat'} Icon={'far fa-comment-alt'} />
       <MenuComponent

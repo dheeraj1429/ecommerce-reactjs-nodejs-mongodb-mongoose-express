@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from '../../Redux/Action/action';
 import { Outlet } from 'react-router';
 import SideBarComponent from '../../DashboardComponents/SidebarComponent/SideBarComponent';
-
 import './Dashboard.css';
 
 function Dashboard() {
@@ -31,7 +30,7 @@ function Dashboard() {
     <div className="userDashboard">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-12 col-sm-12 col-md-2 col-lg-2 p-0">
+          <div className="sidebar_div col-12 col-sm-12 col-md-2 col-lg-2 p-0">
             <SideBarComponent />
           </div>
           <div className="col-12 col-sm-12 col-md-10 col-lg-10 p-0">

@@ -178,3 +178,15 @@ export const getAllInfoAboutUser = function () {
     }
   };
 };
+
+// Change the use info from the database
+export const changeUserInfo = function (data) {
+  return async function (dispatch) {
+    const userInfoRef = await axios.post('/user/changeUserInfo', { data }, { headers });
+
+    dispatch({
+      type: ACTION_TYPE.CHANGE_USER_INFO,
+      payload: userInfoRef.data,
+    });
+  };
+};

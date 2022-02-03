@@ -62,3 +62,17 @@
 .addToCartBtnOne:hover {
   background-color: var(--dark);
 }
+
+.update_userBtn {
+  padding: 0.4rem 2rem;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--boxCl);
+  transition: all 0.2s ease;
+}
+
+.update_userBtn:hover {
+  background-color: var(--btnCL);
+  color: var(--mainColor);
+}

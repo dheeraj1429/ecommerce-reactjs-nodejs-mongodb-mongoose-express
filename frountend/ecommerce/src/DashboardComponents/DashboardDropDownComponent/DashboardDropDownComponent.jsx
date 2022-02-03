@@ -2,10 +2,11 @@ import React from 'react';
 
 import './DashboardDropDownComponent.css';
 
-function DashboardDropDownComponent({ name, label, Data, Value, Change }) {
+function DashboardDropDownComponent({ name, label, Data, Value, Change, style }) {
   return (
-    <div className="Dashboard_dropdown_div">
-      <label htmlFor={name}>{label}</label>
+    <div className={style ? `Dashboard_dropdown_div ${style}` : 'Dashboard_dropdown_div'}>
+      {label ? <label htmlFor={name}>{label}</label> : null}
+
       <div>
         <select name={name} value={Value} onChange={Change}>
           {Data ? Data.map((el) => <option key={el.el}>{el.el}</option>) : null}

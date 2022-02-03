@@ -20,6 +20,7 @@ function LoginUserComponent() {
       {selector && selector.AllAppUsersInfo ? (
         <div className="UserInfoDiv px-4">
           <SearchBarComponent />
+
           {selector.AllAppUsersInfo.map((el) => (
             <UserLoginStatusComponent key={el._id} data={el} />
           ))}

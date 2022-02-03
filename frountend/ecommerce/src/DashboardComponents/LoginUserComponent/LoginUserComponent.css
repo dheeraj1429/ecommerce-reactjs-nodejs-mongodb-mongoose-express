@@ -12,6 +12,4 @@
 .UserInfoDiv {
   width: 90%;
   padding: 1rem;
-  background-color: var(--mainColor);
-  box-shadow: 0 0 10px var(--boxCl);
 }
