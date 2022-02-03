@@ -23,7 +23,6 @@ const createProducts = async (req, res) => {
 
 // Fetch all produst
 const fetchAllProducts = async (req, res) => {
-  console.log(req.body);
   try {
     const AllProducts = await Product.find();
 

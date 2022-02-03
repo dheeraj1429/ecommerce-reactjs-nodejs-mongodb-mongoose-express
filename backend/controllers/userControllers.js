@@ -1,5 +1,6 @@
 const UserModel = require('../models/userModel');
 const bcryptjs = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const inserNewUser = async (req, res) => {
   try {
@@ -27,6 +28,7 @@ const inserNewUser = async (req, res) => {
           name,
           email,
           token,
+          admin: newUser.isAdmin,
         },
       });
     } else {
@@ -63,6 +65,7 @@ const userFind = async (req, res) => {
           name,
           email,
           token,
+          admin: userFindDb.isAdmin,
         },
       });
     } else {

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from '../../Redux/Action/action';
 import { Outlet } from 'react-router';
 import SideBarComponent from '../../DashboardComponents/SidebarComponent/SideBarComponent';
@@ -7,9 +8,23 @@ import SideBarComponent from '../../DashboardComponents/SidebarComponent/SideBar
 import './Dashboard.css';
 
 function Dashboard() {
+  const navigation = useNavigate();
   const dispatch = useDispatch();
+  const selector = useSelector((state) => state.userStoreData);
+
   useEffect(() => {
     dispatch(fetchAllProducts());
+    const userInfo = localStorage.getItem('userinfo');
+
+    if (userInfo) {
+      const userData = JSON.parse(userInfo);
+
+      if (!userData.data.admin) {
+        navigation('/');
+      }
+    } else {
+      navigation('/account/signup');
+    }
   }, []);
 
   return (

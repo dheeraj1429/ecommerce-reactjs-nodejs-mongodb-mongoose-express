@@ -27,7 +27,7 @@ function ShopPage() {
             <div className="col-12 col-sm-12 col-md-3">
               <EditHeadingComponent heading={'Shopping Options'} />
 
-              <div className="shop_page_filter_div mt-4">{/* -------------------shop filres---------------- */}</div>
+              <div className="shop_page_filter_div mt-4"></div>
             </div>
             <div className="col-12 col-sm-12 col-md-9">
               <div className="Shop_product_div">

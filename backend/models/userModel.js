@@ -17,6 +17,10 @@ const User = new mongoose.Schema({
     type: String,
     required: [true, 'please enter the password'],
   },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
   tokens: [
     {
       token: {
@@ -30,7 +34,7 @@ const User = new mongoose.Schema({
 // Genrate the user token
 User.methods.genrateUserToken = async function () {
   try {
-    const token = await jwt.sign({ _id: this._id.toString(), name: this.name }, JWT_TOKEN, { expiresIn: '30d' });
+    const token = await jwt.sign({ _id: this._id.toString(), name: this.name, isAdmin: this.isAdmin }, JWT_TOKEN, { expiresIn: '30d' });
     this.tokens = this.tokens.concat({ token });
     this.save();
     return token;

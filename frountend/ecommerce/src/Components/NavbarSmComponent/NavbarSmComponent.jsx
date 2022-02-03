@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './NavbarSmComponent.css';
 
 function NavbarSmComponent() {
-  const [NavbarContent, setNavbarContent] = useState([{ el: 'HOME' }, { el: 'SHOP' }, { el: 'PAGE' }, { el: 'BLOG' }, { el: 'ABOUT US' }]);
+  const [NavbarContent, setNavbarContent] = useState([{ el: 'HOME' }, { el: 'SHOP' }, { el: 'BLOG' }, { el: 'ABOUT US' }]);
   return (
     <>
       <div className="col-12 nav_sm_inner_div col-sm-12 col-md-2 d-flex justify-content-center align-items-center text-white">
