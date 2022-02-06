@@ -1,0 +1,23 @@
+.product_dis {
+   border-bottom: 1px solid var(--light);
+   padding: 0.5rem 0;
+}
+
+.products_image img {
+   width: auto;
+   height: 100px;
+}
+
+.product_content h4 {
+   font-size: 0.8rem;
+   max-width: 80%;
+}
+
+.product_dis h3 {
+   font-size: 1rem;
+}
+
+.product_content i {
+   color: var(--lightSmook);
+   cursor: pointer;
+}

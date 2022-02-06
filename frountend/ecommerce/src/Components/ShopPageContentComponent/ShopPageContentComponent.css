@@ -1,0 +1,26 @@
+.single_page_content_div {
+  border-radius: 8px;
+  background-color: var(--mainColor);
+  box-shadow: 0 0 10px var(--boxCl);
+}
+
+.single_page_content_div p {
+  font-size: 0.9rem;
+  color: var(--smoothgryCl);
+}
+
+.single_page_content_div h3 {
+  font-size: 1.2rem;
+}
+
+.single_page_content_div h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sideBarColor);
+}
+
+.tb_cl p {
+  max-width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+}

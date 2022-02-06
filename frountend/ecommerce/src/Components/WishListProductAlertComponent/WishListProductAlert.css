@@ -1,0 +1,21 @@
+.Alert_massage_div {
+   position: fixed;
+   width: 350px;
+   background-color: var(--mainColor);
+   border-radius: 8px;
+   bottom: 20px;
+   right: -400px;
+   z-index: 999;
+   transition: all 0.3s ease;
+   box-shadow: 0 0 10px #999;
+   padding: 0.5rem;
+}
+
+.Alert_massage_div_active {
+   right: 20px;
+}
+
+.Alert_massage_div img {
+   width: auto;
+   height: 60px;
+}

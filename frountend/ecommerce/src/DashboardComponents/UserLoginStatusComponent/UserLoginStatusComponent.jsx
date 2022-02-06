@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { changeUserInfo } from '../../Redux/Action/action';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import DashboardDropDownComponent from '../DashboardDropDownComponent/DashboardDropDownComponent';
 import CustomButtonComponent from '../CustomButtonComponent/CustomButtonComponent';
 
