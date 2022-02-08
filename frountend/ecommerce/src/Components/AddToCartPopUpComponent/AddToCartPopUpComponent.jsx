@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { showAddToCartPopup } from '../../Redux/Action/action';
 import CustomButtonComponent from '../../DashboardComponents/CustomButtonComponent/CustomButtonComponent';
@@ -8,9 +9,15 @@ import './AddToCartPopUpComponent.css';
 
 function AddToCartPopUpComponent({ isActive }) {
    const dispatch = useDispatch();
+   const navigation = useNavigate();
    const selector = useSelector((state) => state.userStoreData.AddToSelectedProduct);
 
    const CloseModel = function () {
+      dispatch(showAddToCartPopup(false));
+   };
+
+   const moveToOther = function () {
+      navigation('/cart');
       dispatch(showAddToCartPopup(false));
    };
 
@@ -43,7 +50,11 @@ function AddToCartPopUpComponent({ isActive }) {
                      btnCl={'addToCartBtn'}
                      onClick={() => dispatch(CloseModel())}
                   />
-                  <CustomButtonComponent TextContent={'VIEW CART'} btnCl={'addToCartBtnOne'} />
+                  <CustomButtonComponent
+                     TextContent={'VIEW CART'}
+                     btnCl={'addToCartBtnOne'}
+                     onClick={moveToOther}
+                  />
                </div>
             </div>
          ) : null}

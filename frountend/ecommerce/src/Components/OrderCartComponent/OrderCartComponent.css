@@ -1,0 +1,14 @@
+.product_order_div h1 {
+   font-size: 1.5rem;
+}
+.product_order_div p {
+   font-size: 0.9rem;
+   color: var(--desCl);
+}
+.order_data h3 {
+   font-size: 1.1rem;
+}
+
+.order_sub_title {
+   text-align: right;
+}

@@ -18,6 +18,7 @@ import SignInComponent from './Components/SignInComponent/SignInComponent';
 import SingUpComponent from './Components/SingUpComponent/SingUpComponent';
 import ShopPage from './Pages/ShopPage/ShopPage';
 import WishList from './Pages/WishListPage/WishList';
+import CartPage from './Pages/CartPage/CartPage';
 
 // Dashboard
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/shop/single-product" element={<SingleProductPage />} />
             <Route exact path="/shop" element={<ShopPage />} />
             <Route exact path="/mywishlist" element={<WishList />} />
+            <Route exact path="/cart" element={<CartPage />} />
             <Route exact path="/account" element={<SingInAndLoginComponent />}>
                <Route path="login" element={<SignInComponent />} />
                <Route path="signup" element={<SingUpComponent />} />
