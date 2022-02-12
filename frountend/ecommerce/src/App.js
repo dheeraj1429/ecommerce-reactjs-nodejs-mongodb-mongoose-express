@@ -26,6 +26,7 @@ import ProductsUploadComponent from './DashboardComponents/ProductsUploadCompone
 import DashboardProductsComponent from './DashboardComponents/DashboardProductsComponent/DashboardProductsComponent';
 import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsComponent/ProductsDetailsComponent';
 import LoginUserComponent from './DashboardComponents/LoginUserComponent/LoginUserComponent';
+import ProductsEditPopupComponent from './DashboardComponents/ProductsEditPopupComponent/ProductsEditPopupComponent';
 
 function App() {
    const selector = useSelector((state) => state.userStoreData);
@@ -45,6 +46,7 @@ function App() {
          <AddToCartPopUpComponent isActive={selector.showAddToCardPopUp} />
          <ProductPrevComponent isActive={selector.ShowPrevImageDiv} />
          <WishListProductAlert />
+         <ProductsEditPopupComponent />
 
          <Routes>
             <Route exact path="/" element={<HomePage />} />

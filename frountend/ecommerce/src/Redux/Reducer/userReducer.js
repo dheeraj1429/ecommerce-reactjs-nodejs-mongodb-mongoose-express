@@ -18,6 +18,8 @@ const initalState = {
    AllAppUsersInfo: null,
    ChangeUserInfoStatus: null,
    WishlistAlertData: null,
+   ShowProductEditPopUp: false,
+   ProductUpdate: null,
 };
 
 const userReducer = (state = initalState, action) => {
@@ -133,6 +135,24 @@ const userReducer = (state = initalState, action) => {
          return {
             ...state,
             WishlistAlertData: action.payload,
+         };
+
+      case ACTION_TYPE.SHOW_ADD_TO_CART_POPUP:
+         return {
+            ...state,
+            ShowProductEditPopUp: action.payload,
+         };
+
+      case ACTION_TYPE.PRODUCT_UPDATE:
+         return {
+            ...state,
+            ProductUpdate: action.payload,
+         };
+
+      case ACTION_TYPE.REMOVE_PRODUCT_UPDATE_INFO:
+         return {
+            ...state,
+            ProductUpdate: action.payload,
          };
 
       default:

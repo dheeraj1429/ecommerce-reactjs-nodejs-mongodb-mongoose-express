@@ -214,3 +214,31 @@ export const removeAddToCardProduct = function (data) {
       payload: data,
    };
 };
+
+// show product edit component
+export const showEditPopUp = function (data) {
+   return {
+      type: ACTION_TYPE.SHOW_ADD_TO_CART_POPUP,
+      payload: data,
+   };
+};
+
+// update the products
+export const updateProducts = function (data) {
+   return async function (dispatch) {
+      const updateProductRef = await axios.post('/products/update', { data }, { headers });
+
+      dispatch({
+         type: ACTION_TYPE.PRODUCT_UPDATE,
+         payload: updateProductRef.data,
+      });
+   };
+};
+
+// remove update info
+export const removeUpdateInfo = function (data) {
+   return {
+      type: ACTION_TYPE.REMOVE_PRODUCT_UPDATE_INFO,
+      payload: data,
+   };
+};

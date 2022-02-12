@@ -56,13 +56,15 @@ function SideBarComponent() {
                </div>
 
                <div className="text-center mt-4">
-                  <Link to="/cart">
-                     <CustomButtonComponent
-                        TextContent={'PROCEED TO CHECKOUT'}
-                        btnCl={'addToCartBtnOne'}
-                        onClick={CloseModel}
-                     />
-                  </Link>
+                  {selector.AddToCart !== [] && selector.AddToCart.length > 0 ? (
+                     <Link to="/cart">
+                        <CustomButtonComponent
+                           TextContent={'PROCEED TO CHECKOUT'}
+                           btnCl={'addToCartBtnOne'}
+                           onClick={CloseModel}
+                        />
+                     </Link>
+                  ) : null}
                </div>
             </div>
          </div>
