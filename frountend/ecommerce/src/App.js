@@ -27,6 +27,7 @@ import DashboardProductsComponent from './DashboardComponents/DashboardProductsC
 import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsComponent/ProductsDetailsComponent';
 import LoginUserComponent from './DashboardComponents/LoginUserComponent/LoginUserComponent';
 import ProductsEditPopupComponent from './DashboardComponents/ProductsEditPopupComponent/ProductsEditPopupComponent';
+import EcommerceOrdersComponent from './DashboardComponents/EcommerceOrdersComponent/EcommerceOrdersComponent';
 
 function App() {
    const selector = useSelector((state) => state.userStoreData);
@@ -63,6 +64,7 @@ function App() {
                <Route path="products" element={<DashboardProductsComponent />} />
                <Route path="products/details" element={<ProductsDetailsComponent />} />
                <Route path="users" element={<LoginUserComponent />} />
+               <Route path="ecommerce-orders" element={<EcommerceOrdersComponent />} />
             </Route>
          </Routes>
       </div>
