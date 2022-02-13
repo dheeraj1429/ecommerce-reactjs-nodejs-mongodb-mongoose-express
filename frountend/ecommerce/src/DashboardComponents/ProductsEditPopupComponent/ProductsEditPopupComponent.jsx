@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { showEditPopUp, updateProducts, removeUpdateInfo } from '../../Redux/Action/action';
+import { updateProducts, removeUpdateInfo, showPropductEditPopup } from '../../Redux/Action/action';
 import { useSelector, useDispatch } from 'react-redux';
 import AddProductInputComponent from '../AddProductInputComponent/AddProductInputComponent';
 import DashboardDropDownComponent from '../DashboardDropDownComponent/DashboardDropDownComponent';
@@ -65,7 +65,7 @@ function ProductsEditPopupComponent() {
          if (selector.ProductUpdate.success == true) {
             alert(selector.ProductUpdate.message);
             dispatch(removeUpdateInfo(null));
-            dispatch(showEditPopUp(false));
+            dispatch(showPropductEditPopup(false));
          }
       }
    }, [selector.ProductUpdate]);
@@ -73,9 +73,9 @@ function ProductsEditPopupComponent() {
    return (
       <div
          className={
-            !selector.showAddToCardPopUp
+            !selector.ShowProductEditPopUp
                ? 'Product_edit_div Product_edit_div_hide'
-               : 'Product_edit_div'
+               : 'Product_edit_div '
          }
       >
          {selector.ProductSelected !== null &&
@@ -83,7 +83,7 @@ function ProductsEditPopupComponent() {
             <div className="Product_edit_inner_div">
                <i
                   class="fa-solid fa-xmark close"
-                  onClick={() => dispatch(showEditPopUp(false))}
+                  onClick={() => dispatch(showPropductEditPopup(false))}
                ></i>
 
                <div className="container py-3">

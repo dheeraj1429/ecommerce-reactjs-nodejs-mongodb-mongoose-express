@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { showEditPopUp } from '../../Redux/Action/action';
+import { showPropductEditPopup } from '../../Redux/Action/action';
 import EditHeadingComponent from '../EditHeadingComponent/EditHeadingComponent';
 import CustomButtonComponent from '../CustomButtonComponent/CustomButtonComponent';
 import ProductTableComponent from '../../Components/ProductTableComponent/ProductTableComponent';
@@ -19,7 +19,7 @@ function ProductsDetailsComponent() {
    };
 
    const ShowEditPopUp = function () {
-      dispatch(showEditPopUp(true));
+      dispatch(showPropductEditPopup(true));
    };
 
    return (

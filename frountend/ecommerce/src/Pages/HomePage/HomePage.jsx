@@ -72,7 +72,9 @@ function HomePage() {
             <div className="pt-2 pb-4 px-3">
                <Slider {...settings}>
                   {selector.allProducts !== null && selector.allProducts.success === true
-                     ? selector.allProducts.AllProducts.map((el) => <ProductCardComponent key={el._id} data={el} />)
+                     ? selector.allProducts.AllProducts.map((el) => (
+                          <ProductCardComponent key={el._id} data={el} />
+                       ))
                      : null}
                </Slider>
             </div>

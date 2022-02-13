@@ -242,3 +242,11 @@ export const removeUpdateInfo = function (data) {
       payload: data,
    };
 };
+
+// show product edit popup
+export const showPropductEditPopup = function (data) {
+   return {
+      type: ACTION_TYPE.SHOW_PRODUCT_EDIT_POPUP,
+      payload: data,
+   };
+};

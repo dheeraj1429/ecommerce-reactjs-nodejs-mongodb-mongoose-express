@@ -137,7 +137,7 @@ const userReducer = (state = initalState, action) => {
             WishlistAlertData: action.payload,
          };
 
-      case ACTION_TYPE.SHOW_ADD_TO_CART_POPUP:
+      case ACTION_TYPE.SHOW_PRODUCT_EDIT_POPUP:
          return {
             ...state,
             ShowProductEditPopUp: action.payload,
