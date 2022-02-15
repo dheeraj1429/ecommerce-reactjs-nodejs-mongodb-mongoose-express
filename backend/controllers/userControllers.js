@@ -2,124 +2,129 @@ const UserModel = require('../models/userModel');
 const bcryptjs = require('bcryptjs');
 
 const inserNewUser = async (req, res) => {
-  try {
-    const { name, email, password } = req.body.data;
+   try {
+      const { name, email, password } = req.body.data;
 
-    // create a user
-    const newUser = await new UserModel({
-      name,
-      email,
-      password,
-    });
-
-    // save the user into the database
-    const storeUserRef = await newUser.save();
-
-    // Genrate the user token
-    const token = await newUser.genrateUserToken();
-
-    // send back the res
-    if (storeUserRef) {
-      return res.status(201).json({
-        success: true,
-        massage: 'successful sign in',
-        data: {
-          name,
-          email,
-          token,
-          admin: newUser.isAdmin,
-        },
+      // create a user
+      const newUser = await new UserModel({
+         name,
+         email,
+         password,
       });
-    } else {
-      return res.status(400).json({
-        success: false,
-        massage: 'something worng',
-      });
-    }
-  } catch (err) {
-    console.log(err);
-  }
+
+      // save the user into the database
+      const storeUserRef = await newUser.save();
+
+      // Genrate the user token
+      const token = await newUser.genrateUserToken();
+
+      // send back the res
+      if (storeUserRef) {
+         return res.status(201).json({
+            success: true,
+            massage: 'successful sign in',
+            data: {
+               name,
+               email,
+               token,
+               admin: newUser.isAdmin,
+            },
+         });
+      } else {
+         return res.status(400).json({
+            success: false,
+            massage: 'something worng',
+         });
+      }
+   } catch (err) {
+      console.log(err);
+   }
 };
 
 // Find user from the database
 const userFind = async (req, res) => {
-  try {
-    const { name, email, password } = req.body.data;
+   try {
+      const { name, email, password } = req.body.data;
 
-    // find the user from the database
-    const userFindDb = await UserModel.findOne({ $and: [{ name }, { email }] });
+      // find the user from the database
+      const userFindDb = await UserModel.findOne({ $and: [{ name }, { email }] });
 
-    // match the hashing password
-    const isMatch = await bcryptjs.compare(password, userFindDb.password);
+      // match the hashing password
+      const isMatch = await bcryptjs.compare(password, userFindDb.password);
 
-    // Genrate the user token
-    const token = await userFindDb.genrateUserToken();
+      // Genrate the user token
+      const token = await userFindDb.genrateUserToken();
 
-    // send back the response
-    if (isMatch) {
-      return res.status(200).json({
-        success: true,
-        massage: 'login successful',
-        data: {
-          name,
-          email,
-          token,
-          admin: userFindDb.isAdmin,
-        },
-      });
-    } else {
-      return res.status(400).json({
-        success: false,
-        massage: 'no user found',
-      });
-    }
-  } catch (err) {
-    console.log(err);
-  }
+      // send back the response
+      if (isMatch) {
+         return res.status(200).json({
+            success: true,
+            massage: 'login successful',
+            data: {
+               name,
+               email,
+               token,
+               admin: userFindDb.isAdmin,
+            },
+         });
+      } else {
+         return res.status(404).json({
+            data: {
+               success: false,
+               massage: 'no user found',
+            },
+         });
+      }
+   } catch (err) {
+      console.log(err);
+   }
 };
 
 // get the all users from the database
 const getAllUserFromDb = async function (req, res) {
-  try {
-    // fetch all users
-    const userRefData = await UserModel.find();
+   try {
+      // fetch all users
+      const userRefData = await UserModel.find();
 
-    if (userRefData) {
-      // send back response
-      res.status(200).json({
-        userRefData,
-      });
-    }
-  } catch (err) {
-    console.log(err);
-  }
+      if (userRefData) {
+         // send back response
+         res.status(200).json({
+            userRefData,
+         });
+      }
+   } catch (err) {
+      console.log(err);
+   }
 };
 
 // Change user info data
 const changeUserInfoData = async function (req, res) {
-  try {
-    // find the right user
-    const { id, name, UserDbInfo } = req.body.data;
+   try {
+      // find the right user
+      const { id, name, UserDbInfo } = req.body.data;
 
-    // update the filds
-    const userUpdateRef = await UserModel.updateOne({ $or: [{ _id: id }, { name }] }, { $set: { isAdmin: UserDbInfo.isAdmin } });
+      // update the filds
+      const userUpdateRef = await UserModel.updateOne(
+         { $or: [{ _id: id }, { name }] },
+         { $set: { isAdmin: UserDbInfo.isAdmin } }
+      );
 
-    // send back the response
-    if (userUpdateRef) {
-      return res.status(200).json({
-        success: true,
+      // send back the response
+      if (userUpdateRef) {
+         return res.status(200).json({
+            success: true,
+         });
+      }
+   } catch (err) {
+      return res.status(400).json({
+         massage: 'something worng',
       });
-    }
-  } catch (err) {
-    return res.status(400).json({
-      massage: 'something worng',
-    });
-  }
+   }
 };
 
 module.exports = {
-  inserNewUser,
-  userFind,
-  getAllUserFromDb,
-  changeUserInfoData,
+   inserNewUser,
+   userFind,
+   getAllUserFromDb,
+   changeUserInfoData,
 };

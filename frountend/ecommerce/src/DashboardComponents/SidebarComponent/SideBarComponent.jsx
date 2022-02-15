@@ -32,6 +32,7 @@ function SideBarComponent() {
                { el: 'Details', link: 'products/details' },
                { el: 'Add Products', link: 'add-products' },
                { el: 'Orders', link: 'ecommerce-orders' },
+               { el: 'Website', link: '/' },
             ]}
          />
          <MenuComponent
