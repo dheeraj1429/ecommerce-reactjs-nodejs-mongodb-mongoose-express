@@ -9,6 +9,7 @@ dbFunction();
 // File Routes
 const indexRouter = require('./routes/indexRoute');
 const userRouter = require('./routes/userRoute');
+const blogRouter = require('./routes/blogRouter');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -23,8 +24,9 @@ app.use(cors());
 // Routes
 app.use('/products', indexRouter);
 app.use('/user', userRouter);
+app.use('/blog', blogRouter);
 
 // Server
 app.listen(port, () => {
-  console.log(`server start at localhost:${port}`);
+   console.log(`server start at localhost:${port}`);
 });

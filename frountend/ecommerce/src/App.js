@@ -19,6 +19,7 @@ import SingUpComponent from './Components/SingUpComponent/SingUpComponent';
 import ShopPage from './Pages/ShopPage/ShopPage';
 import WishList from './Pages/WishListPage/WishList';
 import CartPage from './Pages/CartPage/CartPage';
+import BlogPage from './Pages/BlogPage/BlogPage';
 
 // Dashboard
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/shop/single-product" element={<SingleProductPage />} />
             <Route exact path="/shop" element={<ShopPage />} />
+            <Route exact path="/blog" element={<BlogPage />} />
             <Route exact path="/mywishlist" element={<WishList />} />
             <Route exact path="/cart" element={<CartPage />} />
             <Route exact path="/account" element={<SingInAndLoginComponent />}>
