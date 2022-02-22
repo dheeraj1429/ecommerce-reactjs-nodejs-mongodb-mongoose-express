@@ -20,6 +20,8 @@ const initalState = {
    WishlistAlertData: null,
    ShowProductEditPopUp: false,
    ProductUpdate: null,
+   UploadBlogPost: null,
+   AllBlogpost: null,
 };
 
 const userReducer = (state = initalState, action) => {
@@ -153,6 +155,24 @@ const userReducer = (state = initalState, action) => {
          return {
             ...state,
             ProductUpdate: action.payload,
+         };
+
+      case ACTION_TYPE.UPLOAD_BLOG_POST:
+         return {
+            ...state,
+            UploadBlogPost: action.payload,
+         };
+
+      case ACTION_TYPE.UPLOAD_BLOG_POST_DETAILS:
+         return {
+            ...state,
+            UploadBlogPost: action.payload,
+         };
+
+      case ACTION_TYPE.ALL_BLOG_POST:
+         return {
+            ...state,
+            AllBlogpost: action.payload,
          };
 
       default:

@@ -250,3 +250,44 @@ export const showPropductEditPopup = function (data) {
       payload: data,
    };
 };
+
+// upload Blog Post
+export const uploadBlogPost = function (data) {
+   return async function (dispatch) {
+      try {
+         const userPost = await axios.post('/blog/create', { data }, { headers });
+
+         dispatch({
+            type: ACTION_TYPE.UPLOAD_BLOG_POST,
+            payload: userPost.data,
+         });
+      } catch (err) {
+         console.log(err);
+      }
+   };
+};
+
+export const uploadBlogPostDetails = function (data) {
+   return {
+      type: ACTION_TYPE.UPLOAD_BLOG_POST_DETAILS,
+      payload: data,
+   };
+};
+
+// all blog post
+export const allBlogPost = function () {
+   return async function (dispatch) {
+      try {
+         const blogRef = await axios.post('/blog/getall', { headers });
+
+         if (blogRef) {
+            dispatch({
+               type: ACTION_TYPE.ALL_BLOG_POST,
+               payload: blogRef.data,
+            });
+         }
+      } catch (err) {
+         console.log(err);
+      }
+   };
+};

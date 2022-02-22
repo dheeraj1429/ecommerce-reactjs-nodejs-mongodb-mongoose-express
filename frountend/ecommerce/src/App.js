@@ -29,6 +29,8 @@ import ProductsDetailsComponent from './DashboardComponents/ProductsDetailsCompo
 import LoginUserComponent from './DashboardComponents/LoginUserComponent/LoginUserComponent';
 import ProductsEditPopupComponent from './DashboardComponents/ProductsEditPopupComponent/ProductsEditPopupComponent';
 import EcommerceOrdersComponent from './DashboardComponents/EcommerceOrdersComponent/EcommerceOrdersComponent';
+import DashboardBlogComponent from './DashboardComponents/DashboardBlogComponent/DashboardBlogComponent';
+import AllBlogPostComponent from './Components/AllBlogPostComponent/AllBlogPostComponent';
 
 function App() {
    const selector = useSelector((state) => state.userStoreData);
@@ -67,6 +69,8 @@ function App() {
                <Route path="products/details" element={<ProductsDetailsComponent />} />
                <Route path="users" element={<LoginUserComponent />} />
                <Route path="ecommerce-orders" element={<EcommerceOrdersComponent />} />
+               <Route path="blog" element={<DashboardBlogComponent />} />
+               <Route path="all-blog" element={<AllBlogPostComponent />} />
             </Route>
          </Routes>
       </div>

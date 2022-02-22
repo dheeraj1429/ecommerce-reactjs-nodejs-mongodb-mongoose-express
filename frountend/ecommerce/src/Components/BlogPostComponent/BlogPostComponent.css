@@ -1,0 +1,33 @@
+.blog_banner_section h1 {
+   font-weight: 700;
+   font-size: 40px;
+}
+
+.blog_banner_section p {
+   margin-bottom: 0;
+   text-align: justify;
+}
+
+.blog_post_contnet h5 {
+   font-size: 1.2rem;
+   color: var(--sideBarColor);
+}
+
+.blog_post_contnet span {
+   font-size: 1rem;
+   color: var(--headingColor);
+}
+
+.blog_post_contnet h3 {
+   font-size: 3.1rem;
+   color: var(--sideBarColor);
+}
+
+.blog_post_contnet .link_para {
+   color: var(--headCl);
+   cursor: pointer;
+}
+
+.blog_post_contnet .link_para:hover {
+   text-decoration: underline;
+}

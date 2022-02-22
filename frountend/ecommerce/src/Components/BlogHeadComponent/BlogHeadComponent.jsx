@@ -1,22 +1,26 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import BlogPostComponent from '../BlogPostComponent/BlogPostComponent';
+import SpnnerComponent from '../SpnnerComponent/SpnnerComponent';
 
 import './BlogHeadComponent.css';
 
 function BlogHeadComponent() {
+   const selector = useSelector((state) => state.userStoreData);
+
    return (
       <div className="blog_banner_section py-5 side_padding">
          <div className="container-fluid">
-            <div className="row">
-               <div className="col-12 col-md-6 col-lg-6">
-                  <h1>13 December 2021: Possible Omicron Signal in Los Angeles</h1>
-               </div>
-               <div className="col-12 col-md-6 col-lg-6 d-flex user_icons_blog align-items-center justify-content-end">
-                  <img src="./assests/icons&images/useGrop.svg" alt="" />
-                  <div>
-                     <p>bretskymd@gmail.com</p>
-                     <p>November 5, 2021</p>
+            <div className="row mb-5">
+               {selector.AllBlogpost !== null && selector.AllBlogpost.blogRef.length > 0 ? (
+                  selector.AllBlogpost.blogRef.map((el) => (
+                     <BlogPostComponent key={el._id} data={el} />
+                  ))
+               ) : (
+                  <div className="loader_div">
+                     <SpnnerComponent />
                   </div>
-               </div>
+               )}
             </div>
          </div>
       </div>

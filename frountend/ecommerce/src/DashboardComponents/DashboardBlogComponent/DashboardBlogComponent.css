@@ -1,0 +1,6 @@
+.blog_upload_div {
+   width: 100%;
+   background-color: var(--mainColor);
+   box-shadow: 0 0 10px var(--boxCl);
+   border-radius: 8px;
+}
