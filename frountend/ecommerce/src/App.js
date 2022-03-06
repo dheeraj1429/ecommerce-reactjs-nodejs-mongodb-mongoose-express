@@ -20,6 +20,8 @@ import ShopPage from './Pages/ShopPage/ShopPage';
 import WishList from './Pages/WishListPage/WishList';
 import CartPage from './Pages/CartPage/CartPage';
 import BlogPage from './Pages/BlogPage/BlogPage';
+import ForgetPasswordComponent from './Components/ForgetPasswordComponent/ForgetPasswordComponent';
+import ResetPassword from './Pages/ResetPassword/ResetPassword';
 
 // Dashboard
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -59,6 +61,8 @@ function App() {
             <Route exact path="/blog" element={<BlogPage />} />
             <Route exact path="/mywishlist" element={<WishList />} />
             <Route exact path="/cart" element={<CartPage />} />
+            <Route path="/user/forget-password" element={<ForgetPasswordComponent />} />
+            <Route path="/user/reset-password/:id" element={<ResetPassword />} />
             <Route exact path="/account" element={<SingInAndLoginComponent />}>
                <Route path="login" element={<SignInComponent />} />
                <Route path="signup" element={<SingUpComponent />} />

@@ -22,6 +22,8 @@ const initalState = {
    ProductUpdate: null,
    UploadBlogPost: null,
    AllBlogpost: null,
+   SendNewsLetter: null,
+   UserResetPassword: null,
 };
 
 const userReducer = (state = initalState, action) => {
@@ -173,6 +175,24 @@ const userReducer = (state = initalState, action) => {
          return {
             ...state,
             AllBlogpost: action.payload,
+         };
+
+      case ACTION_TYPE.SEND_NEWSLETTER:
+         return {
+            ...state,
+            SendNewsLetter: action.payload,
+         };
+
+      case ACTION_TYPE.RESET_PASSWORD:
+         return {
+            ...state,
+            UserResetPassword: action.payload,
+         };
+
+      case ACTION_TYPE.RESET_PASSWORD_SETTING:
+         return {
+            ...state,
+            UserResetPassword: action.payload,
          };
 
       default:

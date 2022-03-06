@@ -291,3 +291,66 @@ export const allBlogPost = function () {
       }
    };
 };
+
+// send newsletter
+export const sendNewsletter = function (data) {
+   return async function (dispatch) {
+      try {
+         const newsletterRef = await axios.post('user/send-newsletter', { data }, { headers });
+
+         if (newsletterRef) {
+            dispatch({
+               type: ACTION_TYPE.SEND_NEWSLETTER,
+               payload: newsletterRef.data,
+            });
+         }
+      } catch (err) {
+         console.log(err);
+      }
+   };
+};
+
+// forget password
+export const userForgetPassword = function (data) {
+   return async function (dispatch) {
+      try {
+         const forgetPassword = await axios.post('/user/forget-password', { data }, { headers });
+
+         if (forgetPassword) {
+            alert(forgetPassword.data.message);
+         }
+      } catch (err) {
+         console.log(err);
+      }
+   };
+};
+
+// reset password
+export const resetUserPassword = function (data) {
+   return async function (dispatch) {
+      try {
+         const userResetPasswordRef = await axios.post(
+            '/user/reset-password',
+            { data },
+            { headers }
+         );
+
+         if (userResetPasswordRef) {
+            dispatch({
+               type: ACTION_TYPE.RESET_PASSWORD,
+               payload: userResetPasswordRef.data,
+            });
+         }
+      } catch (err) {
+         console.log(err);
+      }
+   };
+};
+
+// reset setting
+export const resetUserPasswordSetting = function () {
+   return {
+      type: ACTION_TYPE.RESET_PASSWORD_SETTING,
+      payload: null,
+   };
+};
